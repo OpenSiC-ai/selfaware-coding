@@ -7,7 +7,8 @@ This document is written for installation agents. A user should be able to paste
 When a user says something like:
 
 ```text
-https://github.com/OpenSiC-ai/selfaware-coding 请帮我在这个项目中安装这个东西
+https://github.com/OpenSiC-ai/selfaware-coding
+Please install this into the current project and configure it to run by itself.
 ```
 
 interpret it as:

@@ -43,8 +43,8 @@ selfaware-coding/
     agent-adapters.md
     agent-adapters.zh.md
     self-install.md
-    self-install.zh.md
     glossary.md
+    glossary.zh.md
   references/
     risk-policy.md
     memory-format.md
@@ -61,7 +61,7 @@ https://github.com/OpenSiC-ai/selfaware-coding
 请帮我在当前项目中安装这个东西，并配置它自行运行。
 ```
 
-安装代理应遵循 [自助安装协议](docs/self-install.zh.md)：安装 `SKILL.md`，除非用户另有说明就把当前工作目录视为目标 repo，配置每 6 小时一次的周期性 pulse，只在无法安全推断时请求必要授权或参数，并且只允许 push `selfaware/*` 分支。
+安装代理应遵循英文的 agent-facing [Self-Install Protocol](docs/self-install.md)：安装 `SKILL.md`，除非用户另有说明就把当前工作目录视为目标 repo，配置每 6 小时一次的周期性 pulse，只在无法安全推断时请求必要授权或参数，并且只允许 push `selfaware/*` 分支。
 
 ## Codex 快速开始
 
@@ -75,7 +75,7 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 
 建议频率：每 6 小时一次。
 
-详细说明见 [Codex 自动化](docs/codex-automation.zh.md) 和 [自助安装协议](docs/self-install.zh.md)。
+详细说明见 [Codex 自动化](docs/codex-automation.zh.md)。安装代理应读取英文 [Self-Install Protocol](docs/self-install.md)。
 
 ## 安全模型
 
@@ -85,7 +85,7 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 
 ## 哲学
 
-见 [Philosophy](docs/philosophy.md)、[哲学](docs/philosophy.zh.md) 和 [术语表](docs/glossary.md)。
+见 [Philosophy](docs/philosophy.md)、[哲学](docs/philosophy.zh.md)、[Glossary](docs/glossary.md) 和 [术语表](docs/glossary.zh.md)。
 
 ## License
 

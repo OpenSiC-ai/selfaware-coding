@@ -41,8 +41,8 @@ selfaware-coding/
     agent-adapters.md
     agent-adapters.zh.md
     self-install.md
-    self-install.zh.md
     glossary.md
+    glossary.zh.md
   references/
     risk-policy.md
     memory-format.md
@@ -59,7 +59,7 @@ https://github.com/OpenSiC-ai/selfaware-coding
 Please install this into the current project and configure it to run by itself.
 ```
 
-The installing agent should follow the [Self-Install Protocol](docs/self-install.md): install `SKILL.md`, treat the current working directory as the target repo unless told otherwise, configure a 6-hour recurring pulse, request only the permissions or parameters it cannot infer safely, and enable branch push only for `selfaware/*` branches.
+The installing agent should follow the English, agent-facing [Self-Install Protocol](docs/self-install.md): install `SKILL.md`, treat the current working directory as the target repo unless told otherwise, configure a 6-hour recurring pulse, request only the permissions or parameters it cannot infer safely, and enable branch push only for `selfaware/*` branches.
 
 ## Quick Start for Codex
 
@@ -83,7 +83,7 @@ See [Risk Policy](references/risk-policy.md).
 
 ## Philosophy
 
-See [Philosophy](docs/philosophy.md) and [Glossary](docs/glossary.md).
+See [Philosophy](docs/philosophy.md) and [Glossary](docs/glossary.md). Chinese readers can use [哲学](docs/philosophy.zh.md) and [术语表](docs/glossary.zh.md).
 
 ## License
 

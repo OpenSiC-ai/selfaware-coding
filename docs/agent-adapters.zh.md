@@ -2,7 +2,7 @@
 
 `selfaware-coding` 被设计为可迁移的通用 skill。只要一个 agent 能加载指令、检查 repo、编辑文件、运行检查、使用 git、持久化记忆，就可以使用它。
 
-如果用户只提供仓库 URL 并要求安装，按 [自助安装协议](self-install.zh.md) 执行。
+如果用户只提供仓库 URL 并要求安装，按给安装代理读取的英文 [Self-Install Protocol](self-install.md) 执行。
 
 ## 通用宿主契约
 
