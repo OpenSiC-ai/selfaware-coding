@@ -24,10 +24,21 @@ Suggested format:
 ```md
 # selfaware config
 
+preferred_language: <language-tag-or-name>
+```
+
+`preferred_language` controls user-facing pulse reports and `.selfaware/` memory files. It may be a BCP 47 tag such as `ja-JP`, `en-US`, `es-ES`, or `zh-CN`, or a plain language name such as `Japanese`, `English`, `Spanish`, or `Chinese`. This is a user preference, not an agent-owned default. Agents should not create or modify this file unless the user explicitly asks to set a language preference, or an installation flow has directly collected that preference from the user.
+
+Examples:
+
+```md
+preferred_language: ja-JP
+preferred_language: en-US
+preferred_language: es-ES
 preferred_language: zh-CN
 ```
 
-`preferred_language` controls user-facing pulse reports and `.selfaware/` memory files. It may be a BCP 47 tag such as `zh-CN`, `en-US`, or `ja-JP`, or a plain language name such as `Chinese`. If absent, the agent should infer the language from the latest user request, existing `.selfaware/` files, README language, or dominant project documentation.
+If the file is absent, the agent may infer the language for the current pulse report from the latest user request, existing `.selfaware/` files, README language, or dominant project documentation, but it should not persist that inference into `config.md`.
 
 Branch names, commit prefixes, commands, API names, and code identifiers should remain tool-friendly and may stay in ASCII English even when the preferred language is not English.
 

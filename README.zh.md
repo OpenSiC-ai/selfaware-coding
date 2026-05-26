@@ -99,8 +99,10 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 ```md
 # .selfaware/config.md
 
-preferred_language: zh-CN
+preferred_language: <language-tag-or-name>
 ```
+
+例如 `ja-JP`、`en-US`、`es-ES`、`zh-CN`。这个文件应由用户或安装流程显式设置，而不是由 pulse 自动猜测后写入。
 
 详细说明见 [Codex 自动化](docs/codex-automation.zh.md)。安装代理应读取英文 [Self-Install Protocol](docs/self-install.md)。
 

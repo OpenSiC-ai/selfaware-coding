@@ -51,9 +51,9 @@ Treat `.selfaware/` as local runtime state by default. Do not include `.selfawar
 
 Keep this skill's reusable agent-facing instructions in English for portability across host agents. For user-facing pulse reports and `.selfaware/` memory files, respect the target repository's language preference.
 
-Read `.selfaware/config.md` during orientation. If it contains `preferred_language`, write the final pulse report, `.selfaware/memory.md`, `.selfaware/backlog.md`, and `.selfaware/pulses/*` in that language. If there is no explicit preference, infer the language from the latest user request, existing `.selfaware/` files, README language, or dominant project documentation. If inference is unclear, default to English.
+Read `.selfaware/config.md` during orientation. If it contains `preferred_language`, write the final pulse report, `.selfaware/memory.md`, `.selfaware/backlog.md`, and `.selfaware/pulses/*` in that language. If there is no explicit preference, infer the language for the current pulse report from the latest user request, existing `.selfaware/` files, README language, or dominant project documentation. If inference is unclear, default to English.
 
-When creating `.selfaware/` for the first time, create `.selfaware/config.md` if a user preference is known or strongly implied. Use a simple line such as `preferred_language: zh-CN`. Branch names, commit prefixes, commands, API names, and code identifiers should remain tool-friendly and may stay in ASCII English even when the preferred language is not English.
+Do not create or modify `.selfaware/config.md` unless the user explicitly asks to set a language preference, or an installation flow has directly collected that preference from the user. Branch names, commit prefixes, commands, API names, and code identifiers should remain tool-friendly and may stay in ASCII English even when the preferred language is not English.
 
 ## Output
 

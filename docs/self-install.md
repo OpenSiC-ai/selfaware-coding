@@ -28,7 +28,7 @@ Ask the user only for missing information or authorization that cannot be inferr
 - **Write permission**: ask before writing outside the current sandbox or installing into a global skill directory.
 - **GitHub permission**: ask when branch push is requested but credentials are missing or invalid.
 - **Cadence**: default to every 6 hours unless the user asks for a different interval.
-- **Language**: default to the user's current language when it is clear. Ask only if the user wants a language preference but it cannot be inferred.
+- **Language**: ask only if the user wants persistent `.selfaware/` memory in a specific language and has not named it.
 
 Do not ask whether to install the skill after the user has already asked for installation. Do not ask whether it should act autonomously; autonomy inside the target repo is the purpose of this skill.
 
@@ -41,7 +41,7 @@ Do not ask whether to install the skill after the user has already asked for ins
 5. Configure the recurring pulse using the prompt below.
 6. Verify that the host agent can load the skill.
 7. Verify git state and branch-push credentials if publishing is enabled.
-8. Create `.selfaware/config.md` with `preferred_language` when the user preference is known or strongly implied.
+8. Create `.selfaware/config.md` with `preferred_language` only when the user explicitly provides a persistent language preference.
 9. Run a dry first pulse or explain how the first scheduled pulse will run.
 
 ## Baseline Pulse Prompt
@@ -66,7 +66,7 @@ An installation is complete when:
 - Codex installations show `selfaware-coding` in the skill manager and `/` command after restart,
 - the target repo is known,
 - a recurring 6-hour pulse exists or is clearly documented for that host,
-- language preference is configured when the user requested or clearly implied one,
+- language preference is configured only when the user explicitly provided one,
 - `.selfaware/` memory policy is understood,
 - branch-push permission is either configured or explicitly recorded as unavailable,
 - the user knows that default-branch push, merge, tag, and release are disabled by default.

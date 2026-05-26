@@ -95,8 +95,10 @@ To make pulse reports and `.selfaware/` memory use your own language, add a repo
 ```md
 # .selfaware/config.md
 
-preferred_language: zh-CN
+preferred_language: <language-tag-or-name>
 ```
+
+Examples include `ja-JP`, `en-US`, `es-ES`, and `zh-CN`. This file is meant to be set by the user or installer, not guessed and written automatically by the pulse.
 
 See [Codex Automation](docs/codex-automation.md) and [Self-Install Protocol](docs/self-install.md) for details.
 
