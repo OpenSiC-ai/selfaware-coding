@@ -85,20 +85,26 @@ After installation, restart Codex or open a new session and confirm that `selfaw
 Suggested automation prompt:
 
 ```text
-Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Orient yourself, read .selfaware/config.md and existing .selfaware/ memory if present, respect the configured preferred_language for user-facing reports and .selfaware/ memory, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
 ```
 
 Suggested cadence: every 6 hours.
 
-To make pulse reports and `.selfaware/` memory use your own language, add a repo-local preference:
+## Language
+
+`selfaware-coding` defaults to English, then uses the first available language source: `.selfaware/config.md`, host agent language settings, operating system locale, then English.
+
+To change the output language for one repository, edit `.selfaware/config.md`:
 
 ```md
 # .selfaware/config.md
 
-preferred_language: <language-tag-or-name>
+preferred_language: ja-JP
+language_label: 日本語
+language_source: user
 ```
 
-Examples include `ja-JP`, `en-US`, `es-ES`, and `zh-CN`. This file is meant to be set by the user or installer, not guessed and written automatically by the pulse.
+Installers may also import the language already configured in the host agent, such as Codex Desktop `localeOverride` or Claude Code `language`. To change the imported value, update the host agent's language setting and reinstall or rerun the installation flow.
 
 See [Codex Automation](docs/codex-automation.md) and [Self-Install Protocol](docs/self-install.md) for details.
 

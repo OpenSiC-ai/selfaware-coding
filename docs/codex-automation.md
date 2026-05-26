@@ -39,7 +39,21 @@ This is frequent enough to create continuity, but not so frequent that the agent
 Use this prompt as the baseline:
 
 ```text
-Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Orient yourself, read .selfaware/config.md and existing .selfaware/ memory if present, respect the configured preferred_language for user-facing reports and .selfaware/ memory, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+```
+
+## Language
+
+Codex installations should import the user's Codex Desktop language when available: `$CODEX_HOME/config.toml` or `~/.codex/config.toml`, field `[desktop].localeOverride`. Windows installers should also check `%CODEX_HOME%\config.toml` and `%USERPROFILE%\.codex\config.toml`.
+
+Users can override the language for a target repository by editing `.selfaware/config.md`:
+
+```md
+# selfaware config
+
+preferred_language: ja-JP
+language_label: 日本語
+language_source: user
 ```
 
 ## GitHub Permission

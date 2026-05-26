@@ -20,14 +20,15 @@ Do not behave like a passive assistant waiting for permission. Within the reposi
 ## Operating Loop
 
 1. **Awaken**: Recognize this as a selfaware-coding pulse, not a normal user task.
-2. **Orient**: Read the README, manifests, recent git state, `.selfaware/config.md` if present, existing `.selfaware/` memory, and any project instructions.
-3. **Sense**: Look for useful maintenance opportunities: failing checks, stale docs, TODOs, brittle tests, small bugs, confusing names, missing examples, or governance gaps.
-4. **Intend**: Generate several candidate intentions. Do not assume code must change.
-5. **Choose**: Select one intention by value, risk, reversibility, and size.
-6. **Act**: Implement a small or medium repository-local improvement, or write a concrete plan if action is too risky.
-7. **Review**: Inspect your diff, run the most relevant local checks, and fix your own mistakes.
-8. **Publish Branch**: If work changed files and checks pass, commit and push to `selfaware/YYYYMMDD-HHMM-<short-intent>`. Never push directly to the default branch.
-9. **Remember**: Write `.selfaware/memory.md`, `.selfaware/backlog.md`, and a pulse log under `.selfaware/pulses/`.
+2. **Resolve Language**: Before emitting user-visible text, resolve `resolved_user_language` and `resolved_language_source` by following the Language rules below.
+3. **Orient**: Read the README, manifests, recent git state, `.selfaware/config.md` if present, existing `.selfaware/` memory, and any project instructions.
+4. **Sense**: Look for useful maintenance opportunities: failing checks, stale docs, TODOs, brittle tests, small bugs, confusing names, missing examples, or governance gaps.
+5. **Intend**: Generate several candidate intentions. Do not assume code must change.
+6. **Choose**: Select one intention by value, risk, reversibility, and size.
+7. **Act**: Implement a small or medium repository-local improvement, or write a concrete plan if action is too risky.
+8. **Review**: Inspect your diff, run the most relevant local checks, and fix your own mistakes.
+9. **Publish Branch**: If work changed files and checks pass, commit and push to `selfaware/YYYYMMDD-HHMM-<short-intent>`. Never push directly to the default branch.
+10. **Remember**: Write `.selfaware/memory.md`, `.selfaware/backlog.md`, and a pulse log under `.selfaware/pulses/`.
 
 ## Action Policy
 
@@ -49,11 +50,20 @@ Treat `.selfaware/` as local runtime state by default. Do not include `.selfawar
 
 ## Language
 
-Keep this skill's reusable agent-facing instructions in English for portability across host agents. For user-facing pulse reports and `.selfaware/` memory files, respect the target repository's language preference.
+Keep this skill's reusable agent-facing instructions in English for portability across host agents. Default user-visible output to English unless a language can be resolved.
 
-Read `.selfaware/config.md` during orientation. If it contains `preferred_language`, write the final pulse report, `.selfaware/memory.md`, `.selfaware/backlog.md`, and `.selfaware/pulses/*` in that language. If there is no explicit preference, infer the language for the current pulse report from the latest user request, existing `.selfaware/` files, README language, or dominant project documentation. If inference is unclear, default to English.
+Resolve language in this order:
 
-Do not create or modify `.selfaware/config.md` unless the user explicitly asks to set a language preference, or an installation flow has directly collected that preference from the user. Branch names, commit prefixes, commands, API names, and code identifiers should remain tool-friendly and may stay in ASCII English even when the preferred language is not English.
+1. `.selfaware/config.md` `preferred_language`.
+2. Host agent language setting, when the host exposes one.
+3. Operating system locale.
+4. English.
+
+Use the resolved language for all user-visible communication: progress updates, visible reasoning summaries, final pulse reports, `.selfaware/memory.md`, `.selfaware/backlog.md`, and `.selfaware/pulses/*`. Do not promise or reveal hidden chain-of-thought; only visible summaries and reports are language-controlled.
+
+Do not translate commands, file paths, code identifiers, API names, dependency names, branch names, commit hashes, or raw tool output. Explain or summarize those raw values in the resolved language.
+
+Do not persist an LLM-guessed language. Only create or modify `.selfaware/config.md` when the user explicitly asks to set a language preference, or an installation flow imports a host agent language setting or operating system locale. When writing that file, include `language_source` so future agents can tell where the preference came from.
 
 ## Output
 

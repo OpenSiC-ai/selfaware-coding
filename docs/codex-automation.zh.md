@@ -39,7 +39,21 @@ v0.1 建议频率：
 建议使用这个基础 prompt：
 
 ```text
-Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Orient yourself, read .selfaware/config.md and existing .selfaware/ memory if present, respect the configured preferred_language for user-facing reports and .selfaware/ memory, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+```
+
+## 语言
+
+Codex 安装流程应优先导入用户已经设置过的 Codex Desktop 语言：`$CODEX_HOME/config.toml` 或 `~/.codex/config.toml` 中的 `[desktop].localeOverride`。Windows 安装器还应检查 `%CODEX_HOME%\config.toml` 和 `%USERPROFILE%\.codex\config.toml`。
+
+用户可以在目标 repo 中编辑 `.selfaware/config.md` 来覆盖输出语言：
+
+```md
+# selfaware config
+
+preferred_language: zh-CN
+language_label: 简体中文
+language_source: user
 ```
 
 ## GitHub 权限

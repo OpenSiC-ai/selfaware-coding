@@ -89,20 +89,26 @@ name: selfaware-coding
 建议自动化 prompt：
 
 ```text
-Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Orient yourself, read .selfaware/config.md and existing .selfaware/ memory if present, respect the configured preferred_language for user-facing reports and .selfaware/ memory, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
 ```
 
 建议频率：每 6 小时一次。
 
-如果希望 pulse 报告和 `.selfaware/` 记忆使用自己的语言，可以在目标 repo 中添加：
+## 语言
+
+`selfaware-coding` 默认使用英语，然后按顺序读取：`.selfaware/config.md`、宿主 agent 语言设置、操作系统语言设置，最后回退到英语。
+
+如果希望单个 repo 使用指定输出语言，可以编辑 `.selfaware/config.md`：
 
 ```md
 # .selfaware/config.md
 
-preferred_language: <language-tag-or-name>
+preferred_language: zh-CN
+language_label: 简体中文
+language_source: user
 ```
 
-例如 `ja-JP`、`en-US`、`es-ES`、`zh-CN`。这个文件应由用户或安装流程显式设置，而不是由 pulse 自动猜测后写入。
+安装流程也可以导入宿主 agent 已经设置过的语言，例如 Codex Desktop 的 `localeOverride` 或 Claude Code 的 `language`。如果想改变导入值，可以先修改宿主 agent 自己的语言设置，然后重新安装或重新运行安装流程。
 
 详细说明见 [Codex 自动化](docs/codex-automation.zh.md)。安装代理应读取英文 [Self-Install Protocol](docs/self-install.md)。
 
