@@ -45,6 +45,8 @@ Respect existing uncommitted work. Before editing, inspect git status. Do not ov
 
 Use `.selfaware/` in the target repository. Follow `references/memory-format.md` when available. Memory should help your future awakenings continue the project, not produce noisy diaries.
 
+Treat `.selfaware/` as local runtime state by default. Do not include `.selfaware/` files in commits unless the target repository explicitly chooses to version that memory as project content.
+
 ## Output
 
 At the end of each pulse, report:

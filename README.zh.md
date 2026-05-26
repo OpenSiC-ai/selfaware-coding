@@ -51,10 +51,6 @@ selfaware-coding/
     release-checklist.md
   examples/
     first-pulse.md
-  .selfaware/
-    memory.md
-    backlog.md
-    pulses/
 ```
 
 ## 让 Agent 自助安装

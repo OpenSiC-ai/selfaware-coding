@@ -2,6 +2,8 @@
 
 `selfaware-coding` stores memory in `.selfaware/` inside the target repository.
 
+`.selfaware/` is local runtime state by default and should normally be ignored by git. Version documentation, templates, or examples instead. If `selfaware-coding` is maintaining its own repository, the same rule applies: keep the live `.selfaware/` directory local unless the project explicitly decides to publish that memory.
+
 ## Directory
 
 ```text

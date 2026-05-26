@@ -49,10 +49,6 @@ selfaware-coding/
     release-checklist.md
   examples/
     first-pulse.md
-  .selfaware/
-    memory.md
-    backlog.md
-    pulses/
 ```
 
 ## Self-Install With an Agent
