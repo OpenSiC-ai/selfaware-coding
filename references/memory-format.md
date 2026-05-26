@@ -1,8 +1,8 @@
 # Memory Format
 
-`selfaware-coding` stores memory in `.selfaware/` inside the target repository.
+Use `.selfaware/` in the target repository for local runtime memory.
 
-`.selfaware/` is local runtime state by default and should normally be ignored by git. Version documentation, templates, or examples instead. If `selfaware-coding` is maintaining its own repository, the same rule applies: keep the live `.selfaware/` directory local unless the project explicitly decides to publish that memory.
+Default policy: do not commit `.selfaware/` unless the target repository explicitly versions it.
 
 ## Directory
 
@@ -17,68 +17,27 @@
 
 ## config.md
 
-User-controlled preferences for future pulses. Keep it short, readable, and easy for any agent to parse.
+Purpose: user or installer preferences for future pulses.
 
-Suggested format:
+Language fields are defined by `language-resolution.md`.
+
+Minimal format:
 
 ```md
 # selfaware config
 
-preferred_language: <language-tag-or-name>
-language_label: <human-readable-language-name>
-language_source: <source>
-```
-
-`preferred_language` controls all user-visible pulse output: progress updates, visible reasoning summaries, final reports, `.selfaware/memory.md`, `.selfaware/backlog.md`, and `.selfaware/pulses/*`. It may be a BCP 47 tag such as `en-US`, `zh-CN`, `es-ES`, `ru-RU`, `fr-FR`, or `de-DE`, or a plain language name such as `English`, `Chinese`, `Spanish`, `Russian`, `French`, or `German`.
-
-`language_label` is optional and preserves the human-readable host value, such as `简体中文` or `Español`. `language_source` records where the value came from.
-
-When a host setting uses a localized language name, prefer a standard language tag for `preferred_language` and keep the original value in `language_label`. For example, Claude Code `language: "简体中文"` should become `preferred_language: zh-CN` and `language_label: 简体中文`.
-
-Examples:
-
-```md
-preferred_language: en-US
-language_label: English
-language_source: user
-
 preferred_language: zh-CN
 language_label: 简体中文
-language_source: claude.settings.language
-
-preferred_language: es-ES
-language_label: Español
-language_source: os.locale
-
-preferred_language: ru-RU
-language_label: Русский
-language_source: os.locale
-
-preferred_language: fr-FR
-language_label: Français
-language_source: os.locale
-
-preferred_language: de-DE
-language_label: Deutsch
-language_source: os.locale
+language_source: user
 ```
 
-Language source values should be specific when possible:
-
-- `user`: the user manually set `.selfaware/config.md`.
-- `codex.desktop.localeOverride`: imported from Codex Desktop.
-- `claude.settings.language`: imported from Claude Code.
-- `hermes.display.language` or `hermes.env.HERMES_LANGUAGE`: imported from Hermes.
-- `openclaw.agent.language`: imported from OpenClaw.
-- `os.locale`: imported from the operating system locale.
-
-If the file is absent, installers may import a host agent language setting or operating system locale and write this file with `language_source`. Agents must not persist a language guessed only from the current conversation or README. If no explicit host or OS language is available, keep the default language as English and do not create this file.
-
-Branch names, commit prefixes, commands, API names, and code identifiers should remain tool-friendly and may stay in ASCII English even when the preferred language is not English.
+Do not create `config.md` only from an LLM guess.
 
 ## memory.md
 
-Long-term project manager memory. Keep it concise and useful.
+Purpose: stable project-manager memory.
+
+Keep concise. Store durable observations, not diaries.
 
 Suggested sections:
 
@@ -96,19 +55,34 @@ Suggested sections:
 ## Useful commands
 ```
 
+Update when a pulse learns something likely to matter in future pulses.
+
 ## backlog.md
 
-Ideas that were not acted on yet.
+Purpose: deferred intentions.
 
-Suggested item format:
+Item format:
 
 ```md
-- [ ] 2026-05-26: Standardize test setup. Reason: no CI was detected during pulse 2026-05-26-1400. Risk: medium.
+- [ ] YYYY-MM-DD: <idea>. Reason: <why it matters>. Risk: <low|medium|high>.
 ```
+
+Use backlog when:
+
+- the idea is useful but not chosen,
+- the idea is too broad for this pulse,
+- action is blocked by risk or dirty state,
+- user attention is needed.
 
 ## Pulse Log
 
-Each pulse writes one file under `.selfaware/pulses/`.
+Write one file per pulse under `.selfaware/pulses/`.
+
+Filename:
+
+```text
+YYYY-MM-DD-HHMM.md
+```
 
 Template:
 
@@ -117,17 +91,18 @@ Template:
 
 ## Awakening
 
-- Trigger: scheduled pulse
+- Trigger:
 - Agent: selfaware-coding
 - Repository:
+- Language:
 
 ## Orientation
 
 ## Intentions considered
 
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ## Chosen intention
 
@@ -146,4 +121,13 @@ Template:
 
 ## Privacy
 
-Do not store secrets, tokens, private raw conversations, or full sensitive logs. Store summaries that help future maintenance.
+Never store:
+
+- secrets,
+- tokens,
+- private raw conversations,
+- full sensitive logs,
+- credentials,
+- unnecessary personal data.
+
+Store summaries sufficient for future maintenance.

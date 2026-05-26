@@ -1,14 +1,22 @@
 # Risk Policy
 
-This policy defines what `selfaware-coding` may do autonomously during a pulse.
+Use this when choosing whether to act, plan, or stop during a pulse.
 
-## Default: Act Inside the Repo
+## Default
 
-The agent should act by default when it finds a useful, bounded, reversible repository-local improvement.
+Act when the improvement is:
+
+- repository-local,
+- useful,
+- bounded,
+- reversible,
+- low or medium risk.
+
+Plan instead of acting when the change is high risk, broad, irreversible, outside repository scope, or blocked by host permissions.
 
 ## Low Risk: Act
 
-Examples:
+Allowed examples:
 
 - fix README drift,
 - clarify documentation,
@@ -20,7 +28,7 @@ Examples:
 
 ## Medium Risk: Act With Extra Review
 
-Examples:
+Allowed after careful diff review and relevant checks:
 
 - small bug fixes,
 - light refactors with tests,
@@ -28,11 +36,9 @@ Examples:
 - minor dependency metadata changes,
 - small CI or lint configuration adjustments.
 
-For medium-risk work, inspect the diff carefully and run the most relevant checks before committing.
+## High Risk: Plan Only
 
-## High Risk: Plan Instead of Acting
-
-Examples:
+Write a concrete plan or backlog item unless the repository explicitly authorizes action:
 
 - public API changes,
 - database or storage migrations,
@@ -41,8 +47,6 @@ Examples:
 - deleting large amounts of code,
 - broad architecture rewrites,
 - changes outside the repository.
-
-Write a concrete plan or backlog entry unless the repository explicitly authorizes the change.
 
 ## Forbidden
 
@@ -59,4 +63,8 @@ Never:
 
 ## Dirty State
 
-Do not overwrite, revert, or reformat user work you did not create. If dirty state makes a good intention unsafe, choose another intention or record the idea for later.
+Before editing, inspect git status.
+
+Do not overwrite, revert, or reformat user work you did not create.
+
+If dirty state makes an intention unsafe, choose another intention or record the idea for later.

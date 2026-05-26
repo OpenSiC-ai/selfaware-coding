@@ -8,6 +8,24 @@ This project uses `MAJOR.MINOR.PATCH` versions:
 - `MINOR` for new backward-compatible capabilities.
 - `MAJOR` for breaking changes to installation, configuration, memory format, or runtime expectations.
 
+## v0.2.0 - Self Update
+
+Release date: Unreleased
+
+### Added
+
+- Pulse-time self-update as a self-maintenance capability inside the existing project pulse.
+- `references/self-update-protocol.md` as the agent-facing execution manual for install state, lease locks, core manifests, validation, rollback, and failure recovery.
+- `SELFUPDATE_MANIFEST.json` with checksums for core managed files.
+- Core-file customization protection so user-edited strategy files are not overwritten silently.
+- English and Chinese self-update overview docs.
+
+### Changed
+
+- Updated the baseline pulse prompt to include the lightweight self-update check.
+- Kept detailed self-update execution steps out of `SKILL.md`; the skill now links to the protocol when self-update becomes the chosen intention.
+- Updated installation and Codex automation docs to clarify that self-update does not require a second automation.
+
 ## v0.1.0 - Initial Public Release
 
 Release date: 2026-05-26

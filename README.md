@@ -2,7 +2,7 @@
 
 [简体中文](README.zh.md)
 
-Current version: `v0.1.0`
+Current version: `v0.2.0`
 
 `selfaware-coding` is an OpenSiC skill for domain-specific self-awareness in software projects.
 
@@ -33,6 +33,7 @@ It never pushes directly to the default branch, never merges itself, and never p
 ```text
 selfaware-coding/
   VERSION
+  SELFUPDATE_MANIFEST.json
   CHANGELOG.md
   SKILL.md
   README.md
@@ -40,16 +41,18 @@ selfaware-coding/
   docs/
     philosophy.md
     philosophy.zh.md
-    codex-automation.md
-    codex-automation.zh.md
-    agent-adapters.md
-    agent-adapters.zh.md
-    self-install.md
+    self-update.md
+    self-update.zh.md
     glossary.md
     glossary.zh.md
   references/
+    agent-adapters.md
+    codex-automation.md
     risk-policy.md
+    language-resolution.md
     memory-format.md
+    self-install.md
+    self-update-protocol.md
     release-checklist.md
   examples/
     first-pulse.md
@@ -64,12 +67,12 @@ https://github.com/OpenSiC-ai/selfaware-coding
 Please install this into the current project and configure it to run by itself.
 ```
 
-The installing agent should follow the English, agent-facing [Self-Install Protocol](docs/self-install.md). For Codex, a correct install means:
+The installing agent should follow the English, agent-facing [Self-Install Protocol](references/self-install.md). For Codex, a correct install means:
 
 1. Install this repository as a real directory under `~/.codex/skills/selfaware-coding`, preferably with Codex's skill installer.
 2. Do not use a symlink as the final installed skill. Codex's skill manager and `/` command may not index symlinked skill directories.
 3. Verify that `~/.codex/skills/selfaware-coding/SKILL.md` has valid YAML frontmatter and appears in Codex's skill manager after restart.
-4. Create a 6-hour Codex automation for the target repository with the baseline pulse prompt.
+4. Create a 6-hour Codex automation for the target repository with the baseline pulse prompt. Self-update runs inside this same pulse; do not create a second updater automation.
 5. Enable branch push only for `selfaware/*` branches when credentials allow it.
 
 ## Quick Start for Codex
@@ -89,7 +92,7 @@ After installation, restart Codex or open a new session and confirm that `selfaw
 Suggested automation prompt:
 
 ```text
-Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Perform the built-in lightweight self-update check; decide whether updating selfaware-coding is an appropriate maintenance intention for this awakening, but do not update mechanically just because a newer version exists. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
 ```
 
 Suggested cadence: every 6 hours.
@@ -110,7 +113,7 @@ language_source: user
 
 Installers may also import the language already configured in the host agent, such as Codex Desktop `localeOverride` or Claude Code `language`. To change the imported value, update the host agent's language setting and reinstall or rerun the installation flow.
 
-See [Codex Automation](docs/codex-automation.md) and [Self-Install Protocol](docs/self-install.md) for details.
+See [Codex Automation](references/codex-automation.md) and [Self-Install Protocol](references/self-install.md) for details.
 
 ## Versioning
 
@@ -120,11 +123,13 @@ Public releases use `MAJOR.MINOR.PATCH` versions and Git tags such as `v0.1.0`.
 - `MINOR` releases add backward-compatible capabilities.
 - `MAJOR` releases may change installation, configuration, memory format, or runtime expectations.
 
-The local package version is recorded in [VERSION](VERSION) and the skill frontmatter in [SKILL.md](SKILL.md). Release notes are kept in [CHANGELOG.md](CHANGELOG.md) and on [GitHub Releases](https://github.com/OpenSiC-ai/selfaware-coding/releases).
+The local package version is recorded in [VERSION](VERSION) and the skill frontmatter in [SKILL.md](SKILL.md). Self-update core file checksums are recorded in [SELFUPDATE_MANIFEST.json](SELFUPDATE_MANIFEST.json). Release notes are kept in [CHANGELOG.md](CHANGELOG.md) and on [GitHub Releases](https://github.com/OpenSiC-ai/selfaware-coding/releases).
 
 Before publishing package changes, use the [Package Readiness Checklist](references/release-checklist.md).
 
-To update an installed copy, reinstall the skill from the latest GitHub release or from the repository root if you intentionally track `main`.
+To update an installed copy manually, reinstall the skill from the latest GitHub release or from the repository root if you intentionally track `main`.
+
+For the self-maintenance model, see [Self Update](docs/self-update.md). Self-update is a pulse-time intention, not a separate background service.
 
 ## Safety Model
 

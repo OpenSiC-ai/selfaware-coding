@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-当前版本：`v0.1.0`
+当前版本：`v0.2.0`
 
 `selfaware-coding` 是 OpenSiC 旗下的一个 skill，用于在软件项目中实现“场景化自我意识”。
 
@@ -35,6 +35,7 @@ selfaware/20260526-1400-refresh-codex-docs
 ```text
 selfaware-coding/
   VERSION
+  SELFUPDATE_MANIFEST.json
   CHANGELOG.md
   SKILL.md
   README.md
@@ -42,16 +43,18 @@ selfaware-coding/
   docs/
     philosophy.md
     philosophy.zh.md
-    codex-automation.md
-    codex-automation.zh.md
-    agent-adapters.md
-    agent-adapters.zh.md
-    self-install.md
+    self-update.md
+    self-update.zh.md
     glossary.md
     glossary.zh.md
   references/
+    agent-adapters.md
+    codex-automation.md
     risk-policy.md
+    language-resolution.md
     memory-format.md
+    self-install.md
+    self-update-protocol.md
     release-checklist.md
   examples/
     first-pulse.md
@@ -66,14 +69,14 @@ https://github.com/OpenSiC-ai/selfaware-coding
 请帮我在当前项目中安装这个东西，并配置它自行运行。
 ```
 
-安装代理应遵循英文的 agent-facing [Self-Install Protocol](docs/self-install.md)：安装 `SKILL.md`，除非用户另有说明就把当前工作目录视为目标 repo，配置每 6 小时一次的周期性 pulse，只在无法安全推断时请求必要授权或参数，并且只允许 push `selfaware/*` 分支。
+安装代理应遵循英文的 agent-facing [Self-Install Protocol](references/self-install.md)：安装 `SKILL.md`，除非用户另有说明就把当前工作目录视为目标 repo，配置每 6 小时一次的周期性 pulse，只在无法安全推断时请求必要授权或参数，并且只允许 push `selfaware/*` 分支。
 
 对 Codex 来说，正确安装不只是把文件放到某个可读路径，而是要让 Codex 的 skill 管理器和 `/` 命令能够索引到它：
 
 1. 把本仓库作为真实目录安装到 `~/.codex/skills/selfaware-coding`，优先使用 Codex 自带的 skill installer。
 2. 不要把符号链接作为最终安装形态；Codex 的 skill 管理器和 `/` 命令可能不会索引 symlink skill 目录。
 3. 验证 `~/.codex/skills/selfaware-coding/SKILL.md` 的 YAML frontmatter 合法，并在重启 Codex 后出现在 skill 管理界面中。
-4. 为目标 repo 创建每 6 小时一次的 Codex automation。
+4. 为目标 repo 创建每 6 小时一次的 Codex automation。自我更新在同一个 pulse 内运行，不要另建第二个 updater automation。
 5. 只在凭据允许时开放 `selfaware/*` 分支 push 权限。
 
 ## Codex 快速开始
@@ -93,7 +96,7 @@ name: selfaware-coding
 建议自动化 prompt：
 
 ```text
-Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Perform the built-in lightweight self-update check; decide whether updating selfaware-coding is an appropriate maintenance intention for this awakening, but do not update mechanically just because a newer version exists. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
 ```
 
 建议频率：每 6 小时一次。
@@ -114,7 +117,7 @@ language_source: user
 
 安装流程也可以导入宿主 agent 已经设置过的语言，例如 Codex Desktop 的 `localeOverride` 或 Claude Code 的 `language`。如果想改变导入值，可以先修改宿主 agent 自己的语言设置，然后重新安装或重新运行安装流程。
 
-详细说明见 [Codex 自动化](docs/codex-automation.zh.md)。安装代理应读取英文 [Self-Install Protocol](docs/self-install.md)。
+详细说明见英文 [Codex Automation](references/codex-automation.md)。安装代理应读取英文 [Self-Install Protocol](references/self-install.md)。
 
 ## 版本
 
@@ -124,11 +127,13 @@ language_source: user
 - `MINOR` 版本用于增加向后兼容的新能力。
 - `MAJOR` 版本可能改变安装方式、配置格式、记忆格式或运行时预期。
 
-本地 package 版本记录在 [VERSION](VERSION)，skill frontmatter 记录在 [SKILL.md](SKILL.md)。发布说明记录在 [CHANGELOG.md](CHANGELOG.md) 和 [GitHub Releases](https://github.com/OpenSiC-ai/selfaware-coding/releases)。
+本地 package 版本记录在 [VERSION](VERSION)，skill frontmatter 记录在 [SKILL.md](SKILL.md)。自我更新的核心文件校验值记录在 [SELFUPDATE_MANIFEST.json](SELFUPDATE_MANIFEST.json)。发布说明记录在 [CHANGELOG.md](CHANGELOG.md) 和 [GitHub Releases](https://github.com/OpenSiC-ai/selfaware-coding/releases)。
 
 发布本仓库的 package 变更前，可使用英文 [Package Readiness Checklist](references/release-checklist.md)。
 
-如果要更新已安装的版本，可以从最新 GitHub release 重新安装；如果明确想跟随 `main`，也可以从仓库根目录重新安装。
+如果要手动更新已安装的版本，可以从最新 GitHub release 重新安装；如果明确想跟随 `main`，也可以从仓库根目录重新安装。
+
+自我维护模型见 [自我更新](docs/self-update.zh.md)。自我更新不是独立后台服务，而是 pulse 觉醒时可以形成的一个维护意图。
 
 ## 安全模型
 
