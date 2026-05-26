@@ -57,3 +57,5 @@ A successful pulse may produce:
 - a short report with checks and next continuation.
 
 If checks fail, the agent should not push. It should record the failure and a continuation plan.
+
+For changes to this skill repository itself, also use the [Package Readiness Checklist](../references/release-checklist.md) before committing.

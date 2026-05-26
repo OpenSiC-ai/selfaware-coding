@@ -57,3 +57,5 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 - 一份包含检查结果和下一步延续点的简短报告。
 
 如果检查失败，agent 不应 push。它应该记录失败和后续计划。
+
+如果维护的是本 skill 仓库本身，commit 前还应使用英文 [Package Readiness Checklist](../references/release-checklist.md)。

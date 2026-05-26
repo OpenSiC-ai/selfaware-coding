@@ -46,8 +46,13 @@ selfaware-coding/
   references/
     risk-policy.md
     memory-format.md
+    release-checklist.md
   examples/
     first-pulse.md
+  .selfaware/
+    memory.md
+    backlog.md
+    pulses/
 ```
 
 ## Self-Install With an Agent
@@ -90,6 +95,8 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 Suggested cadence: every 6 hours.
 
 See [Codex Automation](docs/codex-automation.md) and [Self-Install Protocol](docs/self-install.md) for details.
+
+Before publishing package changes, use the [Package Readiness Checklist](references/release-checklist.md).
 
 ## Safety Model
 

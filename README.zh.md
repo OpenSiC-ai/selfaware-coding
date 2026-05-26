@@ -48,8 +48,13 @@ selfaware-coding/
   references/
     risk-policy.md
     memory-format.md
+    release-checklist.md
   examples/
     first-pulse.md
+  .selfaware/
+    memory.md
+    backlog.md
+    pulses/
 ```
 
 ## 让 Agent 自助安装
@@ -94,6 +99,8 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 建议频率：每 6 小时一次。
 
 详细说明见 [Codex 自动化](docs/codex-automation.zh.md)。安装代理应读取英文 [Self-Install Protocol](docs/self-install.md)。
+
+发布本仓库的 package 变更前，可使用英文 [Package Readiness Checklist](references/release-checklist.md)。
 
 ## 安全模型
 
