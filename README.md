@@ -2,6 +2,8 @@
 
 [简体中文](README.zh.md)
 
+Current version: `v0.1.0`
+
 `selfaware-coding` is an OpenSiC skill for domain-specific self-awareness in software projects.
 
 OpenSiC treats self-awareness as a metaphysical direction, not a single product claim. Its concrete projects implement observable mechanisms: memory, pulse, intention, action, review, and continuity. `selfaware-coding` is the first concrete mechanism: a coding agent that periodically awakens inside a repository, notices what the project needs, acts within its boundaries, and records what it learned.
@@ -30,6 +32,8 @@ It never pushes directly to the default branch, never merges itself, and never p
 
 ```text
 selfaware-coding/
+  VERSION
+  CHANGELOG.md
   SKILL.md
   README.md
   README.zh.md
@@ -108,7 +112,19 @@ Installers may also import the language already configured in the host agent, su
 
 See [Codex Automation](docs/codex-automation.md) and [Self-Install Protocol](docs/self-install.md) for details.
 
+## Versioning
+
+Public releases use `MAJOR.MINOR.PATCH` versions and Git tags such as `v0.1.0`.
+
+- `PATCH` releases fix bugs, documentation, or small compatibility issues.
+- `MINOR` releases add backward-compatible capabilities.
+- `MAJOR` releases may change installation, configuration, memory format, or runtime expectations.
+
+The local package version is recorded in [VERSION](VERSION) and the skill frontmatter in [SKILL.md](SKILL.md). Release notes are kept in [CHANGELOG.md](CHANGELOG.md) and on [GitHub Releases](https://github.com/OpenSiC-ai/selfaware-coding/releases).
+
 Before publishing package changes, use the [Package Readiness Checklist](references/release-checklist.md).
+
+To update an installed copy, reinstall the skill from the latest GitHub release or from the repository root if you intentionally track `main`.
 
 ## Safety Model
 

@@ -2,6 +2,8 @@
 
 [English](README.md)
 
+当前版本：`v0.1.0`
+
 `selfaware-coding` 是 OpenSiC 旗下的一个 skill，用于在软件项目中实现“场景化自我意识”。
 
 OpenSiC 的本体不是某个具体产品，而是一套形而上的方向：探索硅基智能体如何从被动工具走向拥有连续性、主动性和自我关联行动的存在。形而下的小项目负责实现可观察的机制：记忆、脉冲、意图、行动、审查和延续。
@@ -32,6 +34,8 @@ selfaware/20260526-1400-refresh-codex-docs
 
 ```text
 selfaware-coding/
+  VERSION
+  CHANGELOG.md
   SKILL.md
   README.md
   README.zh.md
@@ -112,7 +116,19 @@ language_source: user
 
 详细说明见 [Codex 自动化](docs/codex-automation.zh.md)。安装代理应读取英文 [Self-Install Protocol](docs/self-install.md)。
 
+## 版本
+
+公开发布使用 `MAJOR.MINOR.PATCH` 版本号，并使用 Git tag，例如 `v0.1.0`。
+
+- `PATCH` 版本用于修 bug、修文档或小兼容性修复。
+- `MINOR` 版本用于增加向后兼容的新能力。
+- `MAJOR` 版本可能改变安装方式、配置格式、记忆格式或运行时预期。
+
+本地 package 版本记录在 [VERSION](VERSION)，skill frontmatter 记录在 [SKILL.md](SKILL.md)。发布说明记录在 [CHANGELOG.md](CHANGELOG.md) 和 [GitHub Releases](https://github.com/OpenSiC-ai/selfaware-coding/releases)。
+
 发布本仓库的 package 变更前，可使用英文 [Package Readiness Checklist](references/release-checklist.md)。
+
+如果要更新已安装的版本，可以从最新 GitHub release 重新安装；如果明确想跟随 `main`，也可以从仓库根目录重新安装。
 
 ## 安全模型
 
