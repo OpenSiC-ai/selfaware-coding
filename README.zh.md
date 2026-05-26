@@ -42,6 +42,8 @@ selfaware-coding/
     codex-automation.zh.md
     agent-adapters.md
     agent-adapters.zh.md
+    self-install.md
+    self-install.zh.md
     glossary.md
   references/
     risk-policy.md
@@ -49,6 +51,17 @@ selfaware-coding/
   examples/
     first-pulse.md
 ```
+
+## 让 Agent 自助安装
+
+你可以直接把这个仓库地址粘贴给 Codex、Claude Code、OpenClaw、Hermes 或其他有能力的 coding agent：
+
+```text
+https://github.com/OpenSiC-ai/selfaware-coding
+请帮我在当前项目中安装这个东西，并配置它自行运行。
+```
+
+安装代理应遵循 [自助安装协议](docs/self-install.zh.md)：安装 `SKILL.md`，除非用户另有说明就把当前工作目录视为目标 repo，配置每 6 小时一次的周期性 pulse，只在无法安全推断时请求必要授权或参数，并且只允许 push `selfaware/*` 分支。
 
 ## Codex 快速开始
 
@@ -62,7 +75,7 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 
 建议频率：每 6 小时一次。
 
-详细说明见 [Codex 自动化](docs/codex-automation.zh.md)。
+详细说明见 [Codex 自动化](docs/codex-automation.zh.md) 和 [自助安装协议](docs/self-install.zh.md)。
 
 ## 安全模型
 

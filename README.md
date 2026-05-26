@@ -40,6 +40,8 @@ selfaware-coding/
     codex-automation.zh.md
     agent-adapters.md
     agent-adapters.zh.md
+    self-install.md
+    self-install.zh.md
     glossary.md
   references/
     risk-policy.md
@@ -47,6 +49,17 @@ selfaware-coding/
   examples/
     first-pulse.md
 ```
+
+## Self-Install With an Agent
+
+You can ask an agent to install this project for you. Paste this repository URL into Codex, Claude Code, OpenClaw, Hermes, or another capable coding agent:
+
+```text
+https://github.com/OpenSiC-ai/selfaware-coding
+Please install this into the current project and configure it to run by itself.
+```
+
+The installing agent should follow the [Self-Install Protocol](docs/self-install.md): install `SKILL.md`, treat the current working directory as the target repo unless told otherwise, configure a 6-hour recurring pulse, request only the permissions or parameters it cannot infer safely, and enable branch push only for `selfaware/*` branches.
 
 ## Quick Start for Codex
 
@@ -60,7 +73,7 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 
 Suggested cadence: every 6 hours.
 
-See [Codex Automation](docs/codex-automation.md) for details.
+See [Codex Automation](docs/codex-automation.md) and [Self-Install Protocol](docs/self-install.md) for details.
 
 ## Safety Model
 
