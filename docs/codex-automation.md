@@ -51,8 +51,8 @@ Users can override the language for a target repository by editing `.selfaware/c
 ```md
 # selfaware config
 
-preferred_language: ja-JP
-language_label: 日本語
+preferred_language: en-US
+language_label: English
 language_source: user
 ```
 

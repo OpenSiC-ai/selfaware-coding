@@ -99,8 +99,8 @@ To change the output language for one repository, edit `.selfaware/config.md`:
 ```md
 # .selfaware/config.md
 
-preferred_language: ja-JP
-language_label: 日本語
+preferred_language: en-US
+language_label: English
 language_source: user
 ```
 

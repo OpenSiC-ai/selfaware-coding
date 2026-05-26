@@ -29,30 +29,38 @@ language_label: <human-readable-language-name>
 language_source: <source>
 ```
 
-`preferred_language` controls all user-visible pulse output: progress updates, visible reasoning summaries, final reports, `.selfaware/memory.md`, `.selfaware/backlog.md`, and `.selfaware/pulses/*`. It may be a BCP 47 tag such as `ja-JP`, `en-US`, `es-ES`, or `zh-CN`, or a plain language name such as `Japanese`, `English`, `Spanish`, or `Chinese`.
+`preferred_language` controls all user-visible pulse output: progress updates, visible reasoning summaries, final reports, `.selfaware/memory.md`, `.selfaware/backlog.md`, and `.selfaware/pulses/*`. It may be a BCP 47 tag such as `en-US`, `zh-CN`, `es-ES`, `ru-RU`, `fr-FR`, or `de-DE`, or a plain language name such as `English`, `Chinese`, `Spanish`, `Russian`, `French`, or `German`.
 
-`language_label` is optional and preserves the human-readable host value, such as `简体中文` or `日本語`. `language_source` records where the value came from.
+`language_label` is optional and preserves the human-readable host value, such as `简体中文` or `Español`. `language_source` records where the value came from.
 
 When a host setting uses a localized language name, prefer a standard language tag for `preferred_language` and keep the original value in `language_label`. For example, Claude Code `language: "简体中文"` should become `preferred_language: zh-CN` and `language_label: 简体中文`.
 
 Examples:
 
 ```md
-preferred_language: ja-JP
-language_label: 日本語
-language_source: user
-
 preferred_language: en-US
 language_label: English
-language_source: codex.desktop.localeOverride
+language_source: user
+
+preferred_language: zh-CN
+language_label: 简体中文
+language_source: claude.settings.language
 
 preferred_language: es-ES
 language_label: Español
 language_source: os.locale
 
-preferred_language: zh-CN
-language_label: 简体中文
-language_source: claude.settings.language
+preferred_language: ru-RU
+language_label: Русский
+language_source: os.locale
+
+preferred_language: fr-FR
+language_label: Français
+language_source: os.locale
+
+preferred_language: de-DE
+language_label: Deutsch
+language_source: os.locale
 ```
 
 Language source values should be specific when possible:
