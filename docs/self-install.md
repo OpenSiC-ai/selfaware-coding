@@ -28,6 +28,7 @@ Ask the user only for missing information or authorization that cannot be inferr
 - **Write permission**: ask before writing outside the current sandbox or installing into a global skill directory.
 - **GitHub permission**: ask when branch push is requested but credentials are missing or invalid.
 - **Cadence**: default to every 6 hours unless the user asks for a different interval.
+- **Language**: default to the user's current language when it is clear. Ask only if the user wants a language preference but it cannot be inferred.
 
 Do not ask whether to install the skill after the user has already asked for installation. Do not ask whether it should act autonomously; autonomy inside the target repo is the purpose of this skill.
 
@@ -40,12 +41,13 @@ Do not ask whether to install the skill after the user has already asked for ins
 5. Configure the recurring pulse using the prompt below.
 6. Verify that the host agent can load the skill.
 7. Verify git state and branch-push credentials if publishing is enabled.
-8. Run a dry first pulse or explain how the first scheduled pulse will run.
+8. Create `.selfaware/config.md` with `preferred_language` when the user preference is known or strongly implied.
+9. Run a dry first pulse or explain how the first scheduled pulse will run.
 
 ## Baseline Pulse Prompt
 
 ```text
-Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Orient yourself, read .selfaware/config.md and existing .selfaware/ memory if present, respect the configured preferred_language for user-facing reports and .selfaware/ memory, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
 ```
 
 ## Host Defaults
@@ -64,6 +66,7 @@ An installation is complete when:
 - Codex installations show `selfaware-coding` in the skill manager and `/` command after restart,
 - the target repo is known,
 - a recurring 6-hour pulse exists or is clearly documented for that host,
+- language preference is configured when the user requested or clearly implied one,
 - `.selfaware/` memory policy is understood,
 - branch-push permission is either configured or explicitly recorded as unavailable,
 - the user knows that default-branch push, merge, tag, and release are disabled by default.

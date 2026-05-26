@@ -8,7 +8,7 @@
 
 ## Orientation
 
-The repository has a README, no existing `.selfaware/` memory, and a simple test command in `package.json`.
+The repository has a README, no existing `.selfaware/` memory, a user request in Chinese, and a simple test command in `package.json`.
 
 ## Intentions considered
 
@@ -23,6 +23,7 @@ Fix README command drift and create initial `.selfaware/` memory.
 ## Actions taken
 
 - Updated README command from `npm run test` to `npm test`.
+- Added `.selfaware/config.md` with `preferred_language: zh-CN`.
 - Added `.selfaware/memory.md` with initial project understanding.
 - Added `.selfaware/backlog.md` with a CI setup idea.
 

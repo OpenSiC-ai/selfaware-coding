@@ -8,11 +8,28 @@
 
 ```text
 .selfaware/
+  config.md
   memory.md
   backlog.md
   pulses/
     YYYY-MM-DD-HHMM.md
 ```
+
+## config.md
+
+User-controlled preferences for future pulses. Keep it short, readable, and easy for any agent to parse.
+
+Suggested format:
+
+```md
+# selfaware config
+
+preferred_language: zh-CN
+```
+
+`preferred_language` controls user-facing pulse reports and `.selfaware/` memory files. It may be a BCP 47 tag such as `zh-CN`, `en-US`, or `ja-JP`, or a plain language name such as `Chinese`. If absent, the agent should infer the language from the latest user request, existing `.selfaware/` files, README language, or dominant project documentation.
+
+Branch names, commit prefixes, commands, API names, and code identifiers should remain tool-friendly and may stay in ASCII English even when the preferred language is not English.
 
 ## memory.md
 

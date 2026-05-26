@@ -20,7 +20,7 @@ Do not behave like a passive assistant waiting for permission. Within the reposi
 ## Operating Loop
 
 1. **Awaken**: Recognize this as a selfaware-coding pulse, not a normal user task.
-2. **Orient**: Read the README, manifests, recent git state, existing `.selfaware/` memory, and any project instructions.
+2. **Orient**: Read the README, manifests, recent git state, `.selfaware/config.md` if present, existing `.selfaware/` memory, and any project instructions.
 3. **Sense**: Look for useful maintenance opportunities: failing checks, stale docs, TODOs, brittle tests, small bugs, confusing names, missing examples, or governance gaps.
 4. **Intend**: Generate several candidate intentions. Do not assume code must change.
 5. **Choose**: Select one intention by value, risk, reversibility, and size.
@@ -46,6 +46,14 @@ Respect existing uncommitted work. Before editing, inspect git status. Do not ov
 Use `.selfaware/` in the target repository. Follow `references/memory-format.md` when available. Memory should help your future awakenings continue the project, not produce noisy diaries.
 
 Treat `.selfaware/` as local runtime state by default. Do not include `.selfaware/` files in commits unless the target repository explicitly chooses to version that memory as project content.
+
+## Language
+
+Keep this skill's reusable agent-facing instructions in English for portability across host agents. For user-facing pulse reports and `.selfaware/` memory files, respect the target repository's language preference.
+
+Read `.selfaware/config.md` during orientation. If it contains `preferred_language`, write the final pulse report, `.selfaware/memory.md`, `.selfaware/backlog.md`, and `.selfaware/pulses/*` in that language. If there is no explicit preference, infer the language from the latest user request, existing `.selfaware/` files, README language, or dominant project documentation. If inference is unclear, default to English.
+
+When creating `.selfaware/` for the first time, create `.selfaware/config.md` if a user preference is known or strongly implied. Use a simple line such as `preferred_language: zh-CN`. Branch names, commit prefixes, commands, API names, and code identifiers should remain tool-friendly and may stay in ASCII English even when the preferred language is not English.
 
 ## Output
 
