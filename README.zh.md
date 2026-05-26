@@ -63,9 +63,27 @@ https://github.com/OpenSiC-ai/selfaware-coding
 
 安装代理应遵循英文的 agent-facing [Self-Install Protocol](docs/self-install.md)：安装 `SKILL.md`，除非用户另有说明就把当前工作目录视为目标 repo，配置每 6 小时一次的周期性 pulse，只在无法安全推断时请求必要授权或参数，并且只允许 push `selfaware/*` 分支。
 
+对 Codex 来说，正确安装不只是把文件放到某个可读路径，而是要让 Codex 的 skill 管理器和 `/` 命令能够索引到它：
+
+1. 把本仓库作为真实目录安装到 `~/.codex/skills/selfaware-coding`，优先使用 Codex 自带的 skill installer。
+2. 不要把符号链接作为最终安装形态；Codex 的 skill 管理器和 `/` 命令可能不会索引 symlink skill 目录。
+3. 验证 `~/.codex/skills/selfaware-coding/SKILL.md` 的 YAML frontmatter 合法，并在重启 Codex 后出现在 skill 管理界面中。
+4. 为目标 repo 创建每 6 小时一次的 Codex automation。
+5. 只在凭据允许时开放 `selfaware/*` 分支 push 权限。
+
 ## Codex 快速开始
 
-把这个仓库安装为 Codex skill，然后为需要维护的 repo 创建 Codex 自动化。
+把这个仓库安装为真实目录形式的 Codex skill，然后为需要维护的 repo 创建 Codex 自动化。
+
+如果使用 Codex 内置的 skill installer，请把仓库根目录安装成 `selfaware-coding`：
+
+```text
+repo: OpenSiC-ai/selfaware-coding
+path: .
+name: selfaware-coding
+```
+
+安装后，重启 Codex 或打开新会话，并确认 `selfaware-coding` 同时出现在 skill 管理界面和 `/` 命令中。
 
 建议自动化 prompt：
 

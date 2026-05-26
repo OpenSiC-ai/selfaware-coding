@@ -4,13 +4,21 @@
 
 ## 安装 Skill
 
-把这个仓库安装为 Codex skill。常见本地结构是：
+把这个仓库安装为真实目录形式的 Codex skill。正确的本地结构是：
 
 ```text
 ~/.codex/skills/selfaware-coding/SKILL.md
 ```
 
-可以复制或软链接这个仓库到 skills 目录。Codex 应该能通过 `SKILL.md` 发现 `selfaware-coding` skill。
+优先使用 Codex 的 skill installer：
+
+```text
+repo: OpenSiC-ai/selfaware-coding
+path: .
+name: selfaware-coding
+```
+
+不要把符号链接作为最终安装形态；Codex 的 skill 管理器和 `/` 命令可能不会索引 symlink skill 目录。安装后，重启 Codex 或打开新会话，并确认 `selfaware-coding` 同时出现在 skill 管理界面和 `/` 命令中，再依赖写有 `Use the selfaware-coding skill.` 的自动化 prompt。
 
 ## 自动化目标
 

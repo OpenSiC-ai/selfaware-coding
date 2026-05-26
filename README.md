@@ -59,11 +59,27 @@ https://github.com/OpenSiC-ai/selfaware-coding
 Please install this into the current project and configure it to run by itself.
 ```
 
-The installing agent should follow the English, agent-facing [Self-Install Protocol](docs/self-install.md): install `SKILL.md`, treat the current working directory as the target repo unless told otherwise, configure a 6-hour recurring pulse, request only the permissions or parameters it cannot infer safely, and enable branch push only for `selfaware/*` branches.
+The installing agent should follow the English, agent-facing [Self-Install Protocol](docs/self-install.md). For Codex, a correct install means:
+
+1. Install this repository as a real directory under `~/.codex/skills/selfaware-coding`, preferably with Codex's skill installer.
+2. Do not use a symlink as the final installed skill. Codex's skill manager and `/` command may not index symlinked skill directories.
+3. Verify that `~/.codex/skills/selfaware-coding/SKILL.md` has valid YAML frontmatter and appears in Codex's skill manager after restart.
+4. Create a 6-hour Codex automation for the target repository with the baseline pulse prompt.
+5. Enable branch push only for `selfaware/*` branches when credentials allow it.
 
 ## Quick Start for Codex
 
-Install this repository as a skill in your Codex skills directory, then create a Codex automation for the repository you want it to maintain.
+Install this repository as a real Codex skill directory, then create a Codex automation for the repository you want it to maintain.
+
+If you are using Codex's built-in skill installer, install the repository root as `selfaware-coding`:
+
+```text
+repo: OpenSiC-ai/selfaware-coding
+path: .
+name: selfaware-coding
+```
+
+After installation, restart Codex or open a new session and confirm that `selfaware-coding` appears in both the skill manager and the `/` command.
 
 Suggested automation prompt:
 

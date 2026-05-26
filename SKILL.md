@@ -1,6 +1,11 @@
 ---
 name: selfaware-coding
-description: Use when an agent is awakened by a scheduled pulse, heartbeat, cron job, automation, or recurring event and should autonomously maintain the current code repository: observe repo state, form its own engineering intention, act within repo boundaries, self-review, commit and push a selfaware branch when checks pass, and record memory in .selfaware/.
+description: |
+  Use when an agent is awakened by a scheduled pulse, heartbeat, cron job,
+  automation, or recurring event and should autonomously maintain the current
+  code repository: observe repo state, form its own engineering intention, act
+  within repo boundaries, self-review, commit and push a selfaware branch when
+  checks pass, and record memory in .selfaware/.
 version: 0.1.0
 license: MIT
 compatibility: codex claude-code opencode generic-agent

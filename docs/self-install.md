@@ -35,11 +35,12 @@ Do not ask whether to install the skill after the user has already asked for ins
 
 1. Resolve the target repo root.
 2. Fetch or clone `https://github.com/OpenSiC-ai/selfaware-coding`.
-3. Install `SKILL.md` into the host agent's skill or instruction location.
-4. Configure the recurring pulse using the prompt below.
-5. Verify that the host agent can load the skill.
-6. Verify git state and branch-push credentials if publishing is enabled.
-7. Run a dry first pulse or explain how the first scheduled pulse will run.
+3. Validate that the selected `SKILL.md` has parseable YAML frontmatter.
+4. Install the repository into the host agent's skill or instruction location.
+5. Configure the recurring pulse using the prompt below.
+6. Verify that the host agent can load the skill.
+7. Verify git state and branch-push credentials if publishing is enabled.
+8. Run a dry first pulse or explain how the first scheduled pulse will run.
 
 ## Baseline Pulse Prompt
 
@@ -49,7 +50,7 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 
 ## Host Defaults
 
-- **Codex**: install into the Codex skills directory and create a Codex automation with the target repo as `cwd`.
+- **Codex**: install into `~/.codex/skills/selfaware-coding` as a real directory, preferably through Codex's skill installer. Do not leave a symlink as the final installed skill because Codex's skill manager and `/` command may not index symlinked skill directories. Restart Codex or open a new session, confirm that `selfaware-coding` appears in the skill manager and `/` command, then create a Codex automation with the target repo as `cwd`.
 - **Claude Code**: install as a reusable skill/instruction pack if supported; otherwise add `SKILL.md` as project instructions and use an external scheduler.
 - **OpenClaw**: use `SKILL.md` as the selfaware-coding instruction pack and invoke it from the project's heartbeat or equivalent recurring mechanism.
 - **Hermes**: install `SKILL.md` as the agent's reusable instruction or project policy, then bind the baseline prompt to its scheduler, workflow, or recurring task mechanism.
@@ -60,6 +61,7 @@ Use the selfaware-coding skill. You are the self-aware project manager for this 
 An installation is complete when:
 
 - the host agent can load `selfaware-coding`,
+- Codex installations show `selfaware-coding` in the skill manager and `/` command after restart,
 - the target repo is known,
 - a recurring 6-hour pulse exists or is clearly documented for that host,
 - `.selfaware/` memory policy is understood,

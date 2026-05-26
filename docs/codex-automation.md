@@ -4,13 +4,21 @@ This guide describes how to run `selfaware-coding` as a recurring Codex automati
 
 ## Install the Skill
 
-Install this repository as a Codex skill. A typical local layout is:
+Install this repository as a real Codex skill directory. A correct local layout is:
 
 ```text
 ~/.codex/skills/selfaware-coding/SKILL.md
 ```
 
-You can copy or symlink this repository into the skills directory. Codex should be able to discover the `selfaware-coding` skill from `SKILL.md`.
+Prefer Codex's skill installer, using:
+
+```text
+repo: OpenSiC-ai/selfaware-coding
+path: .
+name: selfaware-coding
+```
+
+Do not use a symlink as the final installed skill. Codex's skill manager and `/` command may not index symlinked skill directories. After installation, restart Codex or open a new session and confirm that `selfaware-coding` appears in both the skill manager and the `/` command before relying on an automation prompt that says `Use the selfaware-coding skill.`
 
 ## Automation Target
 
