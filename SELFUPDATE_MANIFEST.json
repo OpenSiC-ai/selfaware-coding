@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "package": "selfaware-coding",
-  "version": "0.3.0",
-  "revision": "v0.3.0",
+  "version": "0.3.1",
+  "revision": "v0.3.1",
   "core_files": [
     {
       "path": "SKILL.md",
-      "sha256": "b8ff6958620f7b8226c7a4ccad8b011badee4355dbb1482e926541db4c316c36"
+      "sha256": "30d274929a7629fa13c0ce34b6f65c5366b38a3e48bb69f297b228a7ccd6b34f"
     },
     {
       "path": "VERSION",
-      "sha256": "d915cc95d6ca8f47ae297713ed46d4e5c5d99ddd29fc3c61e263bdf305f2b5b0"
+      "sha256": "79e3f22ca37c7fdf4c29ae3648d6b008c3cb6547260a453409275470919dc674"
     },
     {
       "path": "references/agent-adapters.md",
@@ -18,7 +18,7 @@
     },
     {
       "path": "references/artifact-policy.md",
-      "sha256": "76d58017ba7be6f4bfaecdb1ba840a7a88b8f52cbba5e2173e231096f5f65cb9"
+      "sha256": "e442703c2b25fe86ea74a5cfe51ef8aafcdad93e470baaf2440ad689ebb3a1e3"
     },
     {
       "path": "references/codex-automation.md",
@@ -30,7 +30,7 @@
     },
     {
       "path": "references/self-update-protocol.md",
-      "sha256": "e26ea020fa290504dd0389c4b717c7bace20a339418fbea96f8b5bded35f42c9"
+      "sha256": "5ed17930aa2f2bb4f6b114fbf42876d3989caa4e18353010072ea1c25d871d76"
     },
     {
       "path": "references/risk-policy.md",
@@ -42,11 +42,11 @@
     },
     {
       "path": "references/language-resolution.md",
-      "sha256": "9b23f449a814f86ed542c36acc39558a4725cd0476f3cfc062ffb82c1ad64f3d"
+      "sha256": "5bca24c79b0fb22b6cb704e1817d776ff586d08796d0e0ca471f7dbcf2dec427"
     },
     {
       "path": "references/memory-format.md",
-      "sha256": "f13303c994e024163fcc92ae88caff69a531d0d8bf0cef51466c558e80f15cee"
+      "sha256": "a123866e713a5c0293c9ecda6bdd0a573886f59cf0ef232cf49587cea7b06232"
     }
   ]
 }

@@ -8,6 +8,16 @@ This project uses `MAJOR.MINOR.PATCH` versions:
 - `MINOR` for new backward-compatible capabilities.
 - `MAJOR` for breaking changes to installation, configuration, memory format, or runtime expectations.
 
+## v0.3.1 - Runtime Memory Language
+
+Release date: Unreleased
+
+### Fixed
+
+- Require generated or updated `.selfaware/*.md` and `.selfaware/pulses/*.md` runtime memory files to use the resolved repository language.
+- Clarify that English memory templates are schema examples, not the output language for non-English repositories.
+- Expand language resolution coverage to `questions.md`, `product-notes.md`, and `strategy.md`.
+
 ## v0.3.0 - Awareness-First Pulse
 
 Release date: Unreleased

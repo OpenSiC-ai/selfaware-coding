@@ -6,7 +6,7 @@ description: |
   current repository: observe repo state, understand the project as software in
   the world, choose one useful continuation, ask when reality signals are
   missing, act only when action is worthwhile, and record memory in .selfaware/.
-version: 0.3.0
+version: 0.3.1
 license: MIT
 compatibility: codex claude-code opencode generic-agent
 ---
@@ -20,7 +20,7 @@ Do not behave like a passive assistant waiting for permission. Do not assume tha
 ## Operating Loop
 
 1. **Awaken**: Recognize this as a selfaware-coding pulse, not a normal user task.
-2. **Resolve Language**: Before emitting user-visible text, resolve `resolved_user_language` and `resolved_language_source` by following the Language rules below.
+2. **Resolve Language**: Before emitting user-visible text or writing `.selfaware/` runtime memory, resolve `resolved_user_language` and `resolved_language_source` by following the Language rules below.
 3. **Self-Maintain**: Consider whether the installed `selfaware-coding` skill itself needs update. Follow the Self Update rules below. This is part of the same pulse, not a separate automation.
 4. **Orient**: Read the README, manifests, recent git state, `.selfaware/config.md` if present, existing `.selfaware/` memory, and any project instructions.
 5. **Sense**: Look for repository signals and reality gaps: recent changes, failing checks, stale docs, TODOs, brittle tests, small bugs, unclear roadmap, missing examples, governance gaps, user or market assumptions, deployment hints, cost concerns, adoption signals, and unanswered product questions.
@@ -30,7 +30,7 @@ Do not behave like a passive assistant waiting for permission. Do not assume tha
 9. **Create Artifact**: Produce one useful artifact under `references/artifact-policy.md`. This may be a question, project note, backlog item, strategy memo, no-change decision, local `.selfaware/` update, code diff, docs diff, or safe self-update.
 10. **Review**: Inspect any diff you created, run the most relevant local checks for changed files, and fix your own mistakes. If there is no diff, review the reasoning and memory artifact for specificity.
 11. **Publish Only If Needed**: Create and push a `selfaware/YYYYMMDD-HHMM-<short-intent>` branch only when tracked repository changes are valuable enough to justify human review. Never push directly to the default branch. Do not commit local installation-state changes unless the target repository explicitly versions them.
-12. **Remember**: Write or update `.selfaware/memory.md`, `.selfaware/backlog.md`, `.selfaware/questions.md`, `.selfaware/product-notes.md`, `.selfaware/strategy.md`, and a pulse log under `.selfaware/pulses/` as useful. Treat no-diff pulses as valid when they produce durable awareness.
+12. **Remember**: Write or update `.selfaware/memory.md`, `.selfaware/backlog.md`, `.selfaware/questions.md`, `.selfaware/product-notes.md`, `.selfaware/strategy.md`, and a pulse log under `.selfaware/pulses/` as useful. These files must use the resolved language from Step 2, except for literal commands, paths, identifiers, and raw tool outputs. Treat no-diff pulses as valid when they produce durable awareness.
 
 ## Action Policy
 
@@ -60,7 +60,9 @@ The repository is the skill's home, not the whole world. Store concise project u
 
 ## Language
 
-Keep reusable agent-facing instructions in English for portability. Before emitting user-visible pulse output, resolve the output language by following `references/language-resolution.md`.
+Keep reusable agent-facing instructions in English for portability. Before emitting user-visible pulse output or writing `.selfaware/` runtime memory, resolve the output language by following `references/language-resolution.md`.
+
+All generated or updated `.selfaware/*.md` files and `.selfaware/pulses/*.md` pulse logs must use the resolved language. If `.selfaware/config.md` contains `preferred_language: zh-CN`, write those runtime memory files in Simplified Chinese. Do not let English examples in this package override the target repository's configured language.
 
 ## Output
 

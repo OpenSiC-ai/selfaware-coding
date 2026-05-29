@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-当前版本：`v0.3.0`
+当前版本：`v0.3.1`
 
 `selfaware-coding` 是 OpenSiC 旗下的一个 skill，用于在软件项目中实现“场景化自我意识”。
 

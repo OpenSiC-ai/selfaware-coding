@@ -4,6 +4,8 @@ Use `.selfaware/` in the target repository for local runtime memory.
 
 Default policy: do not commit `.selfaware/` unless the target repository explicitly versions it.
 
+Language policy: write generated or updated `.selfaware/*.md` files and `.selfaware/pulses/*.md` pulse logs in the resolved language from `language-resolution.md`. The English headings below are schema examples, not required output language. For `preferred_language: zh-CN`, write runtime memory headings and prose in Simplified Chinese while keeping literal commands, paths, identifiers, and raw tool output unchanged.
+
 ## Directory
 
 ```text

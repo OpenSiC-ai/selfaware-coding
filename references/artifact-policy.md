@@ -33,6 +33,8 @@ Prefer `.selfaware/` for runtime awareness that should help future pulses but sh
 
 Do not commit `.selfaware/` unless the target repository explicitly versions it.
 
+Write local runtime artifacts in the resolved language from the target repository's `.selfaware/config.md` or other language source. For example, `preferred_language: zh-CN` means `.selfaware/memory.md`, `.selfaware/backlog.md`, `.selfaware/questions.md`, `.selfaware/product-notes.md`, `.selfaware/strategy.md`, and `.selfaware/pulses/*.md` should be written in Simplified Chinese.
+
 ## Tracked Artifacts
 
 Use tracked repository files only when the change belongs to the public or shared project surface:

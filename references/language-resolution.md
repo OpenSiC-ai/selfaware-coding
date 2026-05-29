@@ -1,6 +1,6 @@
 # Language Resolution
 
-Use this before emitting user-visible pulse output or writing `.selfaware/` memory.
+Use this before emitting user-visible pulse output or writing `.selfaware/` runtime memory.
 
 ## Order
 
@@ -22,9 +22,29 @@ Use the resolved language for:
 - final pulse reports,
 - `.selfaware/memory.md`,
 - `.selfaware/backlog.md`,
+- `.selfaware/questions.md`,
+- `.selfaware/product-notes.md`,
+- `.selfaware/strategy.md`,
 - `.selfaware/pulses/*`.
 
 Do not reveal hidden chain-of-thought. Only visible summaries and reports are language-controlled.
+
+## Runtime Memory Language
+
+All generated or updated `.selfaware/*.md` files and `.selfaware/pulses/*.md` pulse logs must use the resolved language from the target repository.
+
+Examples and templates in this package are written in English because reusable agent-facing instructions stay portable. They are not the output language. Translate section headings and prose when writing runtime memory for a repository with a non-English `preferred_language`.
+
+Keep only these literal:
+
+- commands,
+- file paths,
+- code identifiers,
+- API names,
+- dependency names,
+- branch names,
+- commit hashes,
+- raw tool output.
 
 ## Config Write Rules
 

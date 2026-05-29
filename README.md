@@ -2,7 +2,7 @@
 
 [简体中文](README.zh.md)
 
-Current version: `v0.3.0`
+Current version: `v0.3.1`
 
 `selfaware-coding` is an OpenSiC skill for domain-specific self-awareness in software projects.
 
