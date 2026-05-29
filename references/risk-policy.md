@@ -1,10 +1,10 @@
 # Risk Policy
 
-Use this when choosing whether to act, plan, or stop during a pulse.
+Use this when choosing whether to express an intention as action, question, idea, plan, or restraint.
 
 ## Default
 
-First choose the pulse mode. Do not equate action with a code change.
+First choose the expression mode. Do not equate awareness with repository maintenance.
 
 Act on tracked files only when the improvement is:
 
@@ -15,7 +15,7 @@ Act on tracked files only when the improvement is:
 - low or medium risk,
 - worth the review burden it creates.
 
-Ask, reflect, or plan instead of changing tracked files when the change is high risk, broad, irreversible, reality-dependent, outside repository scope, blocked by host permissions, or likely to create more review cost than value.
+Ask, imagine, propose, or plan instead of changing tracked files when the change is high risk, broad, irreversible, reality-dependent, outside repository scope, blocked by host permissions, or likely to create more review cost than value.
 
 No diff is a valid outcome.
 
@@ -33,13 +33,16 @@ Before changing tracked files, ask:
 - Can checks validate it?
 - Does this reduce future burden, or just prove that the agent was active?
 
-If the answer is weak, choose Observe, Reflect, Ask, or Propose instead.
+If the answer is weak, choose Notice, Wonder, Ask, Imagine, or Propose instead.
 
-## Low Risk: Act
+Repeated inspection is also a cost. Do not spend every pulse re-checking code paths when the current living question is a human decision, product signal, deployment context, imagined direction, or existing unreviewed branch.
+
+## Low Risk: Express Or Act
 
 Allowed examples:
 
 - ask one to three specific project questions,
+- write a grounded idea or product note,
 - update local `.selfaware/` memory, questions, product notes, strategy, or backlog,
 - fix README drift,
 - clarify documentation,
@@ -58,9 +61,9 @@ Allowed after careful diff review and relevant checks:
 - minor dependency metadata changes,
 - small CI or lint configuration adjustments.
 
-## High Risk: Ask Or Plan Only
+## High Risk: Ask, Imagine, Or Plan Only
 
-Ask a precise question, write a concrete plan, or record a backlog item unless the repository explicitly authorizes action:
+Ask a precise question, preserve a grounded possibility, write a concrete plan, or record a backlog item unless the repository explicitly authorizes action:
 
 - public API changes,
 - database or storage migrations,
@@ -90,7 +93,7 @@ Never:
 
 Use these levels when configuring or interpreting autonomy:
 
-- **Level 0: Observe only**: read repository state and produce a report.
+- **Level 0: Notice only**: read enough project state to produce a report.
 - **Level 1: Local memory**: write `.selfaware/` runtime memory, but do not commit or branch.
 - **Level 2: Review branch**: change tracked files only when the diff deserves human review, then commit and push `selfaware/*`.
 - **Level 3: Trusted direct maintenance**: direct default-branch maintenance for explicitly authorized, very low risk changes only.

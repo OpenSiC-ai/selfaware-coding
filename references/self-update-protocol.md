@@ -23,8 +23,8 @@ Use a global install-state file in the installed skill directory when possible. 
 {
   "install_source": "https://github.com/OpenSiC-ai/selfaware-coding",
   "channel": "stable",
-  "installed_version": "0.3.1",
-  "installed_revision": "v0.3.1",
+  "installed_version": "0.4.0",
+  "installed_revision": "v0.4.0",
   "manifest_path": "SELFUPDATE_MANIFEST.json",
   "last_update_check": "2026-05-26T10:00:00+08:00",
   "last_update_result": "up_to_date",
@@ -43,8 +43,8 @@ Each release must include `SELFUPDATE_MANIFEST.json` for core managed files:
 {
   "schema_version": 1,
   "package": "selfaware-coding",
-  "version": "0.3.1",
-  "revision": "v0.3.1",
+  "version": "0.4.0",
+  "revision": "v0.4.0",
   "core_files": [
     {
       "path": "SKILL.md",
@@ -110,8 +110,8 @@ The lock is a metadata file, not an empty marker:
   "operation": "self-update",
   "started_at": "2026-05-26T10:00:00+08:00",
   "expires_at": "2026-05-26T10:30:00+08:00",
-  "installed_version": "0.3.1",
-  "installed_revision": "v0.3.1",
+  "installed_version": "0.4.0",
+  "installed_revision": "v0.4.0",
   "candidate_version": "0.2.1"
 }
 ```
@@ -127,7 +127,7 @@ Any pulse that acquires the lock must release it before continuing normal reposi
 ## Execution Steps
 
 1. Read install state.
-2. If cooldown is active, record `skipped_cooldown` and return without locking.
+2. Decide whether cooldown should suppress the release check. Cooldown may suppress routine checks only when the previous result was `up_to_date`, `no_candidate`, `skipped_cooldown`, or another ordinary non-update result. Do not let cooldown suppress checks after `installed_from_github`, `unknown`, `network_unavailable`, `state_repaired`, or a user-reported stale installation. If cooldown suppresses the check, record `skipped_cooldown` and return without locking.
 3. Check release metadata for the selected channel.
 4. If no useful candidate exists, record `up_to_date` or `no_candidate` and return without locking.
 5. Acquire a lease lock with `expires_at` written immediately.
@@ -184,3 +184,4 @@ Rollback is local installation maintenance. Do not publish it as a project branc
 - **Candidate validation failure**: keep current installation.
 - **Replacement interrupted**: on next pulse, prefer restoring the last known good backup before attempting another update.
 - **Network unavailable**: record `network_unavailable` and continue normal repository maintenance.
+- **Cooldown hides stale install**: if a pulse has evidence that the installed package is stale, or the previous result was an installation event rather than a confirmed up-to-date check, bypass cooldown for one lightweight release check.

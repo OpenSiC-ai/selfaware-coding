@@ -2,12 +2,14 @@
 
 Use this to decide what counts as a successful pulse output.
 
-The artifact is the useful continuation produced by the pulse. It does not have to be a code diff.
+The artifact is the useful expression produced by the pulse. It does not have to be a code diff, and it does not have to be a task.
 
 ## Valid Artifacts
 
 - a no-change decision with a concrete reason,
 - one to three high-value questions,
+- a grounded noticing,
+- a preserved intuition or imagined possibility,
 - a project understanding update,
 - a product or strategy note,
 - a backlog item,
@@ -16,6 +18,8 @@ The artifact is the useful continuation produced by the pulse. It does not have 
 - a small tracked code change,
 - a safe self-update,
 - a pulse report that synthesizes recent state for the human.
+
+Repository care is valid, but it is only one expression. A repeated code-health summary is not a useful artifact by itself. It must either uncover a new decision, validate a chosen care/build diff, or explain why further code work would create review burden.
 
 ## Local Runtime Artifacts
 
@@ -62,6 +66,20 @@ Good questions ask for missing reality signals such as:
 - what risks are unacceptable.
 
 Weak questions ask the human to do the agent's orientation work.
+
+## Imaginative Artifacts
+
+An imaginative artifact is valid when it is grounded in the project but not yet ready to become implementation.
+
+Good imaginative artifacts:
+
+- name the possibility clearly,
+- say what current signals suggested it,
+- separate facts from hypotheses,
+- explain what future signal would confirm or reject it,
+- avoid creating tracked work unless the repository already keeps proposal docs.
+
+Do not force every imaginative artifact into a backlog item. Some ideas should remain as strategy or product notes until they ripen.
 
 ## No-Change Decisions
 

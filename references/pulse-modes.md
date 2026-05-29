@@ -1,13 +1,14 @@
-# Pulse Modes
+# Expression Modes
 
-Use this when choosing what a pulse should do.
+Use this when choosing how an intention should express itself.
 
-A pulse does not have to modify tracked files. Choose the mode that best serves project continuity with the least unnecessary review burden.
+A pulse does not have to modify tracked files. It first lets an intention arise, then chooses the expression that best preserves project continuity without unnecessary review burden.
 
-## Mode Selection
+## Choosing Expression
 
 Consider:
 
+- what feels alive or unresolved in the project,
 - value to the project,
 - missing reality signals,
 - risk and reversibility,
@@ -16,43 +17,46 @@ Consider:
 - whether local `.selfaware/` memory is enough,
 - whether a question would unlock better future action than a diff.
 
-## Observe
+Do not begin by hunting for code chores. Let the project suggest possible directions first, then ground them in repository evidence.
 
-Purpose: understand current state without changing files.
+## Notice
+
+Purpose: notice a meaningful state, pattern, tension, or absence.
 
 Use when:
 
 - the repository is unfamiliar,
 - dirty state makes action unsafe,
 - recent changes need synthesis,
-- no specific intention is trustworthy yet.
+- an observed pattern matters more than immediate action.
 
 Allowed artifacts:
 
 - final report,
 - pulse log if local memory is enabled,
-- concise `.selfaware/memory.md` update when it records durable orientation.
+- concise `.selfaware/memory.md` update,
+- `.selfaware/product-notes.md` observation.
 
 Do not create a branch.
 
-## Reflect
+## Wonder
 
-Purpose: form project awareness, direction, or judgment.
+Purpose: hold an unresolved question or intuition without forcing an answer.
 
 Use when:
 
-- the most useful work is interpreting the project,
-- product direction, adoption, user value, operational context, or architecture intent is unclear,
-- code changes would be premature.
+- the project hints at a future but the evidence is incomplete,
+- a technical fact is less important than understanding direction,
+- forcing an implementation would flatten the idea.
 
 Allowed artifacts:
 
-- `.selfaware/product-notes.md`,
 - `.selfaware/strategy.md`,
+- `.selfaware/product-notes.md`,
 - `.selfaware/backlog.md`,
-- final report with specific reasoning.
+- final report with a grounded intuition.
 
-Do not create a branch unless the target repository explicitly versions these notes.
+Do not create a branch unless the repository explicitly versions these notes.
 
 ## Ask
 
@@ -72,9 +76,28 @@ Allowed artifacts:
 
 Do not ask broad surveys. Ask only questions that would change future decisions.
 
+## Imagine
+
+Purpose: create a grounded possibility that does not yet need implementation.
+
+Use when:
+
+- the project could grow in a new direction,
+- a future product, workflow, community, deployment, or research path is visible,
+- the idea should be preserved before it becomes a task.
+
+Allowed artifacts:
+
+- `.selfaware/strategy.md`,
+- `.selfaware/product-notes.md`,
+- `.selfaware/backlog.md`,
+- final report with a concrete imagined path.
+
+Imagination must stay connected to the project. It may exceed current implementation, but it must not pretend unknown facts are known.
+
 ## Propose
 
-Purpose: turn an idea into a concrete option without implementing it.
+Purpose: turn an intention into a concrete option without implementing it.
 
 Use when:
 
@@ -90,9 +113,9 @@ Allowed artifacts:
 
 Create a branch only for a tracked proposal worth human review.
 
-## Maintain
+## Tend
 
-Purpose: perform bounded upkeep.
+Purpose: care for the repository body.
 
 Use when:
 
@@ -116,7 +139,7 @@ Create a branch only if tracked files changed and the diff is worth review.
 
 Purpose: implement a meaningful product or code change.
 
-Use sparingly. Build mode needs a stronger reason than Maintain mode.
+Use sparingly. Build mode needs a stronger reason than Tend mode.
 
 Use when:
 
@@ -125,10 +148,21 @@ Use when:
 - tests or checks can validate behavior,
 - the change aligns with recorded user goals or repository roadmap.
 
-Do not use Build for speculative product ideas without user approval. Propose or Ask instead.
+Do not use Build for speculative product ideas without user approval. Imagine, Ask, or Propose instead.
+
+## Legacy Names
+
+Older pulse logs may use Observe, Reflect, Maintain, or Build.
+
+- Observe maps to Notice.
+- Reflect maps to Wonder or Notice, depending on whether the pulse formed a new intuition.
+- Maintain maps to Tend.
+- Build remains Build.
+
+Use the new names for future pulses.
 
 ## Self-Update
 
-Self-update is not a separate mode. It can be the chosen intention inside Maintain when the installed skill needs safe maintenance and `references/self-update-protocol.md` allows it.
+Self-update is not a separate mode. It can be the chosen intention inside Tend when the installed skill needs safe maintenance and `references/self-update-protocol.md` allows it.
 
 Do not update mechanically just because a newer version exists.

@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "package": "selfaware-coding",
-  "version": "0.3.1",
-  "revision": "v0.3.1",
+  "version": "0.4.0",
+  "revision": "v0.4.0",
   "core_files": [
     {
       "path": "SKILL.md",
-      "sha256": "30d274929a7629fa13c0ce34b6f65c5366b38a3e48bb69f297b228a7ccd6b34f"
+      "sha256": "bdb773795b21569e2c76d66b30efeed2fcbaea2839c1c54cd7e80a90bb5f0cca"
     },
     {
       "path": "VERSION",
-      "sha256": "79e3f22ca37c7fdf4c29ae3648d6b008c3cb6547260a453409275470919dc674"
+      "sha256": "40b8eb4000a913a7791090535f291d3d369874162a89ef3c9e3d4e887a1b9e79"
     },
     {
       "path": "references/agent-adapters.md",
@@ -18,27 +18,27 @@
     },
     {
       "path": "references/artifact-policy.md",
-      "sha256": "e442703c2b25fe86ea74a5cfe51ef8aafcdad93e470baaf2440ad689ebb3a1e3"
+      "sha256": "63be77902e2d7c021eb891ebb3c0e6a009305ebac838d414187f078ded32d85b"
     },
     {
       "path": "references/codex-automation.md",
-      "sha256": "ff02f18600516c742c02c74778f82acd76e894d44c4cd225bc46825ccb9d5645"
+      "sha256": "4fdd431f40c03e4af714bf90062fa6a42abb7bf0382d2234f3aa349a2593b773"
     },
     {
       "path": "references/self-install.md",
-      "sha256": "013af0a5a7490184483464351d2035a81eccda607f2da249168d646606358121"
+      "sha256": "e2efc4e84817cd5f50612d083f4345280b17630d3f86e344c596bcfd9b847c88"
     },
     {
       "path": "references/self-update-protocol.md",
-      "sha256": "5ed17930aa2f2bb4f6b114fbf42876d3989caa4e18353010072ea1c25d871d76"
+      "sha256": "69654126e533daaff2ecd5f0e18f97364705bbd7bc5ba71e24954909a16becd1"
     },
     {
       "path": "references/risk-policy.md",
-      "sha256": "ad5436908b6544071d7091979696c03016c453184e5886844b6d5e11cb49c1b0"
+      "sha256": "03e258b81c4ef62d8393e07bb63d2868ab0d357a54a324b57d2369b5ac2c442e"
     },
     {
       "path": "references/pulse-modes.md",
-      "sha256": "33d466c1010874095aad6baccb4e90fef9a709e93add7cd9bafdacfcc6df3e23"
+      "sha256": "df4c51fc07be95154d653ffc6973b674325b2ae3790a772104dde044b5da70cd"
     },
     {
       "path": "references/language-resolution.md",
@@ -46,7 +46,7 @@
     },
     {
       "path": "references/memory-format.md",
-      "sha256": "a123866e713a5c0293c9ecda6bdd0a573886f59cf0ef232cf49587cea7b06232"
+      "sha256": "22b58f036509f956de997573ad9aaff3e0cb2eec27d89bc47ff749636db60518"
     }
   ]
 }

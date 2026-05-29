@@ -179,7 +179,7 @@ Template:
 2.
 3.
 
-## Pulse mode
+## Expression mode
 
 ## Chosen intention
 

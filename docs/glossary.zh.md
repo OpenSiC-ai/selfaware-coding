@@ -15,4 +15,4 @@
 | 记忆 | memory | 供未来 pulse 使用的持久项目经验。 |
 | 自我更新 | self-update | skill 在一次 pulse 中可能形成的更新自身的意图，让未来的自己继承更好的安装形态。 |
 | 回归 | return | agent 能再次回来，继承记忆，并继续与同一个 repo 发生关系。 |
-| 自知项目经理 | self-aware project manager | `selfaware-coding` 要求 agent 在 repo 中扮演的角色。 |
+| 项目驻留意识 | project presence | `selfaware-coding` 要求 agent 在 repo 中觉醒时进入的角色。 |

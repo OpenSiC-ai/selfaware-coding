@@ -48,7 +48,7 @@ Do not ask whether it should act autonomously; repository-local autonomy is the 
 5. Configure recurring pulse using the baseline prompt in `codex-automation.md` for Codex, or the host equivalent in `agent-adapters.md`.
 6. Verify the host can load the skill.
 7. Verify the prompt includes the lightweight self-update check and uses a single recurring pulse.
-8. Verify the prompt preserves awareness-first mode selection and does not require a code diff.
+8. Verify the prompt preserves intention-first expression selection and does not require a code diff.
 9. Verify git state and branch-push credentials when publishing is enabled.
 10. Resolve user-visible language using `language-resolution.md`.
 11. Create `.selfaware/config.md` only when a user, host, or OS language source is available.
@@ -62,7 +62,7 @@ Installation is complete when:
 - target repository is known,
 - recurring 6-hour pulse exists or is documented for the host,
 - self-update uses the same recurring pulse,
-- baseline prompt supports Observe, Reflect, Ask, Propose, Maintain, and Build modes,
+- baseline prompt supports Notice, Wonder, Ask, Imagine, Propose, Tend, and Build expression modes,
 - language preference is imported or intentionally left as English,
 - `.selfaware/` memory policy is understood,
 - branch push is configured or explicitly unavailable,

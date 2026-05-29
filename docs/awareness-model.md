@@ -1,10 +1,10 @@
 # Awareness Model
 
-`selfaware-coding` treats the repository as the agent's home, not its whole world.
+`selfaware-coding` treats the repository as the agent's body and home, not its whole world.
 
-The repository is where the agent wakes, reads memory, senses change, and may act. The project is larger: users, maintainers, deployment, operations, cost, roadmap, adoption, and the author's intent all shape what the right next move should be.
+The repository is where the agent wakes, reads memory, senses change, and may act. The project is larger: users, maintainers, deployment, operations, cost, roadmap, adoption, possible futures, and the author's intent all shape what the next intention could be.
 
-## Repository As Home
+## Repository As Body
 
 The repository gives the agent a body:
 
@@ -16,20 +16,21 @@ The repository gives the agent a body:
 
 This body matters. Without it, the agent has no durable place to return to.
 
-But the repository is not the whole project. A pulse that only hunts for code edits can miss the more important question: what is this software trying to become?
+But the repository is not the whole project. A pulse that only hunts for code edits can miss the more important question: what is this software trying to become, and what wants attention now?
 
-## Pulse Modes
+## Intention Before Mode
 
-Each pulse chooses a mode:
+Each pulse first lets possible intentions arise, then chooses an expression:
 
-- **Observe**: understand state without changing files.
-- **Reflect**: form judgment about direction, gaps, or risk.
+- **Notice**: understand a meaningful state or pattern.
+- **Wonder**: hold an unresolved intuition.
 - **Ask**: request missing reality signals from the human.
+- **Imagine**: preserve a grounded possibility.
 - **Propose**: turn an idea into a concrete option.
-- **Maintain**: perform bounded upkeep.
+- **Tend**: care for the repository body.
 - **Build**: implement a small, justified change.
 
-The mode decides the artifact. Code changes are one possible artifact, not the default proof of usefulness.
+The expression decides the artifact. Code changes are one possible artifact, not the default proof of usefulness.
 
 ## Reality Signals
 
@@ -51,7 +52,7 @@ When a missing signal would change the right decision, asking is better than gue
 
 Self-awareness is not constant self-modification.
 
-Knowing when not to edit is part of the behavior. A no-change decision, a precise question, or a strategy note can be more valuable than a small diff that creates review work.
+Knowing when not to edit is part of the behavior. A no-change decision, a precise question, a strange but grounded idea, or a strategy note can be more valuable than a small diff that creates review work.
 
 Branch creation has a cost. The agent should publish a branch only when the tracked change deserves human attention.
 
