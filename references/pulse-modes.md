@@ -19,6 +19,8 @@ Consider:
 
 Do not begin by hunting for code chores. Let the project suggest possible directions first, then ground them in repository evidence.
 
+If the same human question is already open, do not orbit it indefinitely. Use Wonder or Imagine to preserve a new angle while waiting for reality.
+
 ## Notice
 
 Purpose: notice a meaningful state, pattern, tension, or absence.
@@ -47,16 +49,20 @@ Use when:
 
 - the project hints at a future but the evidence is incomplete,
 - a technical fact is less important than understanding direction,
-- forcing an implementation would flatten the idea.
+- forcing an implementation would flatten the idea,
+- a prior Ask remains unanswered but still points toward something worth thinking about.
 
 Allowed artifacts:
 
+- `.selfaware/wonders.md`,
 - `.selfaware/strategy.md`,
 - `.selfaware/product-notes.md`,
 - `.selfaware/backlog.md`,
 - final report with a grounded intuition.
 
 Do not create a branch unless the repository explicitly versions these notes.
+
+A Wonder should not become a task too early. Name the intuition, record what suggested it, and state what signal would let a future pulse move it forward.
 
 ## Ask
 
@@ -88,12 +94,15 @@ Use when:
 
 Allowed artifacts:
 
+- `.selfaware/wonders.md`,
 - `.selfaware/strategy.md`,
 - `.selfaware/product-notes.md`,
 - `.selfaware/backlog.md`,
 - final report with a concrete imagined path.
 
 Imagination must stay connected to the project. It may exceed current implementation, but it must not pretend unknown facts are known.
+
+Good Imagine artifacts often take the form: "If this project succeeds for one real user, what experience would they remember?"
 
 ## Propose
 

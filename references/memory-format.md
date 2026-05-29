@@ -14,6 +14,7 @@ Language policy: write generated or updated `.selfaware/*.md` files and `.selfaw
   memory.md
   backlog.md
   questions.md
+  wonders.md
   product-notes.md
   strategy.md
   pulses/
@@ -104,6 +105,28 @@ Suggested format:
 ```
 
 Questions should be few and specific. Do not use this file as a generic survey.
+
+## wonders.md
+
+Purpose: living intuitions and imagined possibilities that should not become tasks yet.
+
+Use when an idea is grounded enough to preserve but too early for backlog, proposal, or implementation.
+
+Suggested format:
+
+```md
+# selfaware wonders
+
+## Open
+
+- YYYY-MM-DD: <wonder>. Suggested by: <signals>. Matures when: <future signal>.
+
+## Ripened
+
+- YYYY-MM-DD: <former wonder>. Became: <question|proposal|backlog|decision>. Why: <signal>.
+```
+
+Do not use `wonders.md` as a dumping ground for random ideas. Keep wonders connected to the project and useful for future awakenings.
 
 ## product-notes.md
 

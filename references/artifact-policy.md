@@ -10,6 +10,7 @@ The artifact is the useful expression produced by the pulse. It does not have to
 - one to three high-value questions,
 - a grounded noticing,
 - a preserved intuition or imagined possibility,
+- a wonder that should not yet become a task,
 - a project understanding update,
 - a product or strategy note,
 - a backlog item,
@@ -30,6 +31,7 @@ Prefer `.selfaware/` for runtime awareness that should help future pulses but sh
   memory.md
   backlog.md
   questions.md
+  wonders.md
   product-notes.md
   strategy.md
   pulses/
@@ -37,7 +39,7 @@ Prefer `.selfaware/` for runtime awareness that should help future pulses but sh
 
 Do not commit `.selfaware/` unless the target repository explicitly versions it.
 
-Write local runtime artifacts in the resolved language from the target repository's `.selfaware/config.md` or other language source. For example, `preferred_language: zh-CN` means `.selfaware/memory.md`, `.selfaware/backlog.md`, `.selfaware/questions.md`, `.selfaware/product-notes.md`, `.selfaware/strategy.md`, and `.selfaware/pulses/*.md` should be written in Simplified Chinese.
+Write local runtime artifacts in the resolved language from the target repository's `.selfaware/config.md` or other language source. For example, `preferred_language: zh-CN` means `.selfaware/memory.md`, `.selfaware/backlog.md`, `.selfaware/questions.md`, `.selfaware/wonders.md`, `.selfaware/product-notes.md`, `.selfaware/strategy.md`, and `.selfaware/pulses/*.md` should be written in Simplified Chinese.
 
 ## Tracked Artifacts
 
@@ -80,6 +82,19 @@ Good imaginative artifacts:
 - avoid creating tracked work unless the repository already keeps proposal docs.
 
 Do not force every imaginative artifact into a backlog item. Some ideas should remain as strategy or product notes until they ripen.
+
+## Wonders
+
+A wonder is a living intuition, not a commitment.
+
+Use `.selfaware/wonders.md` when:
+
+- an unanswered question keeps pointing somewhere interesting,
+- the project suggests a possible future that is not ready for a proposal,
+- a user story, metaphor, product feeling, or adoption path appears but lacks evidence,
+- turning the idea into backlog would make it too narrow too soon.
+
+Record what suggested the wonder and what signal would mature it.
 
 ## No-Change Decisions
 

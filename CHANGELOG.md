@@ -8,6 +8,20 @@ This project uses `MAJOR.MINOR.PATCH` versions:
 - `MINOR` for new backward-compatible capabilities.
 - `MAJOR` for breaking changes to installation, configuration, memory format, or runtime expectations.
 
+## v0.4.1 - Wonder And Imagination Tuning
+
+Release date: Unreleased
+
+### Added
+
+- `.selfaware/wonders.md` as a local runtime memory surface for living intuitions and imagined possibilities that should not become tasks yet.
+- Free-intention perspective prompts for first user, future admirer, likely failure, hidden workflow, project voice, missing proof, surprising use, and code-unavailable action.
+
+### Changed
+
+- Clarified that an unanswered Ask should not be repeated indefinitely; future pulses should turn it into Wonder or Imagine artifacts from another angle when useful.
+- Expanded Wonder and Imagine modes so they can preserve grounded possibilities without converting them into backlog or implementation.
+
 ## v0.4.0 - Intention-First Awakening
 
 Release date: Unreleased

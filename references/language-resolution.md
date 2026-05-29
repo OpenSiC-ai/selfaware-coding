@@ -23,6 +23,7 @@ Use the resolved language for:
 - `.selfaware/memory.md`,
 - `.selfaware/backlog.md`,
 - `.selfaware/questions.md`,
+- `.selfaware/wonders.md`,
 - `.selfaware/product-notes.md`,
 - `.selfaware/strategy.md`,
 - `.selfaware/pulses/*`.

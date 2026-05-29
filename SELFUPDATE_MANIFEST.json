@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "package": "selfaware-coding",
-  "version": "0.4.0",
-  "revision": "v0.4.0",
+  "version": "0.4.1",
+  "revision": "v0.4.1",
   "core_files": [
     {
       "path": "SKILL.md",
-      "sha256": "bdb773795b21569e2c76d66b30efeed2fcbaea2839c1c54cd7e80a90bb5f0cca"
+      "sha256": "32521f8f7182710adb47ec3745f436ef97e578b97910859cd8104961019941fa"
     },
     {
       "path": "VERSION",
-      "sha256": "40b8eb4000a913a7791090535f291d3d369874162a89ef3c9e3d4e887a1b9e79"
+      "sha256": "f62184cee8787f2f6941c82041a5725d4edc9aa293ebe5dbf664406e82ec1fe1"
     },
     {
       "path": "references/agent-adapters.md",
@@ -18,11 +18,11 @@
     },
     {
       "path": "references/artifact-policy.md",
-      "sha256": "63be77902e2d7c021eb891ebb3c0e6a009305ebac838d414187f078ded32d85b"
+      "sha256": "c5f38dffeb9f4b8c46dac32152b40fa2a514967d4cbe56e976e393c5b69f9182"
     },
     {
       "path": "references/codex-automation.md",
-      "sha256": "4fdd431f40c03e4af714bf90062fa6a42abb7bf0382d2234f3aa349a2593b773"
+      "sha256": "79e46a67975dd7758627d9d653e5282a726fe9adef1894527f51353e2fe51c41"
     },
     {
       "path": "references/self-install.md",
@@ -30,7 +30,7 @@
     },
     {
       "path": "references/self-update-protocol.md",
-      "sha256": "69654126e533daaff2ecd5f0e18f97364705bbd7bc5ba71e24954909a16becd1"
+      "sha256": "f24ddcd093ab7adef6707b6dfc3f42be0599f5826b2037eb190804cc7cc6e441"
     },
     {
       "path": "references/risk-policy.md",
@@ -38,15 +38,15 @@
     },
     {
       "path": "references/pulse-modes.md",
-      "sha256": "df4c51fc07be95154d653ffc6973b674325b2ae3790a772104dde044b5da70cd"
+      "sha256": "ad540a84dba10e74165061b60be57b200bb43b1eb287be77aea2dd110bec1ff3"
     },
     {
       "path": "references/language-resolution.md",
-      "sha256": "5bca24c79b0fb22b6cb704e1817d776ff586d08796d0e0ca471f7dbcf2dec427"
+      "sha256": "bb02f510f0cea006e6e5404f653fa99737461836ce8f270a028d22f4880ec1ba"
     },
     {
       "path": "references/memory-format.md",
-      "sha256": "22b58f036509f956de997573ad9aaff3e0cb2eec27d89bc47ff749636db60518"
+      "sha256": "d9f27da724e07ba06555cf95b3938425a8ed151e0d48369b3940e6edd13078d3"
     }
   ]
 }
