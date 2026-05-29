@@ -8,6 +8,26 @@ This project uses `MAJOR.MINOR.PATCH` versions:
 - `MINOR` for new backward-compatible capabilities.
 - `MAJOR` for breaking changes to installation, configuration, memory format, or runtime expectations.
 
+## v0.3.0 - Awareness-First Pulse
+
+Release date: Unreleased
+
+### Added
+
+- Awareness-first pulse model with explicit Observe, Reflect, Ask, Propose, Maintain, and Build modes.
+- `references/pulse-modes.md` as the agent-facing mode selection guide.
+- `references/artifact-policy.md` to define valid no-diff, question, memory, strategy, proposal, maintenance, and build artifacts.
+- English and Chinese awareness model docs that frame the repository as the agent's home, not its whole world.
+- `.selfaware/questions.md`, `.selfaware/product-notes.md`, and `.selfaware/strategy.md` as local runtime memory surfaces.
+
+### Changed
+
+- Reworked `SKILL.md` so a code diff is no longer the default outcome of a pulse.
+- Updated automation prompts to choose a pulse mode and produce one useful artifact before deciding whether tracked files should change.
+- Raised the branch threshold: publish `selfaware/*` only when tracked changes deserve human review.
+- Expanded the risk policy to treat review burden as a real project cost.
+- Updated memory guidance to capture reality signals, product hypotheses, strategy, open questions, and rejected intentions.
+
 ## v0.2.0 - Self Update
 
 Release date: Unreleased

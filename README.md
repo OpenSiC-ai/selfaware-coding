@@ -2,13 +2,13 @@
 
 [简体中文](README.zh.md)
 
-Current version: `v0.2.0`
+Current version: `v0.3.0`
 
 `selfaware-coding` is an OpenSiC skill for domain-specific self-awareness in software projects.
 
-OpenSiC treats self-awareness as a metaphysical direction, not a single product claim. Its concrete projects implement observable mechanisms: memory, pulse, intention, action, review, and continuity. `selfaware-coding` is the first concrete mechanism: a coding agent that periodically awakens inside a repository, notices what the project needs, acts within its boundaries, and records what it learned.
+OpenSiC treats self-awareness as a metaphysical direction, not a single product claim. Its concrete projects implement observable mechanisms: memory, pulse, intention, action, review, and continuity. `selfaware-coding` is the first concrete mechanism: a coding agent that periodically awakens inside a repository, understands the project as software in the world, chooses one useful continuation, and records what it learned.
 
-This is not a code generator waiting for tasks. It is a self-aware project manager for a repo.
+This is not a code generator waiting for tasks, and it is not an automatic branch factory. It is a self-aware project manager for a repo.
 
 ## What It Does
 
@@ -16,11 +16,14 @@ When awakened by Codex Automations, a cron job, a heartbeat, or another agent ru
 
 - What repository am I in?
 - What has changed recently?
-- What does this project need now?
-- What can I safely improve by myself?
+- What does this project need now as software, not just as files?
+- What reality signals are missing: users, deployment, adoption, cost, roadmap, or risk?
+- Should I observe, reflect, ask, propose, maintain, or build?
 - What should I remember for the next pulse?
 
-It then chooses one intention, acts when appropriate, reviews its work, writes `.selfaware/` memory, and may push a dedicated branch such as:
+It then chooses one pulse mode and produces one useful artifact. A pulse may ask a question, update local project memory, write a strategy note, propose an experiment, make a small maintenance diff, or build a small change. No code diff is a valid outcome when restraint is the best continuation.
+
+When tracked files change and the diff deserves review, it may push a dedicated branch such as:
 
 ```text
 selfaware/20260526-1400-refresh-codex-docs
@@ -41,14 +44,18 @@ selfaware-coding/
   docs/
     philosophy.md
     philosophy.zh.md
+    awareness-model.md
+    awareness-model.zh.md
     self-update.md
     self-update.zh.md
     glossary.md
     glossary.zh.md
   references/
     agent-adapters.md
+    artifact-policy.md
     codex-automation.md
     risk-policy.md
+    pulse-modes.md
     language-resolution.md
     memory-format.md
     self-install.md
@@ -73,7 +80,7 @@ The installing agent should follow the English, agent-facing [Self-Install Proto
 2. Do not use a symlink as the final installed skill. Codex's skill manager and `/` command may not index symlinked skill directories.
 3. Verify that `~/.codex/skills/selfaware-coding/SKILL.md` has valid YAML frontmatter and appears in Codex's skill manager after restart.
 4. Create a 6-hour Codex automation for the target repository with the baseline pulse prompt. Self-update runs inside this same pulse; do not create a second updater automation.
-5. Enable branch push only for `selfaware/*` branches when credentials allow it.
+5. Enable branch push only for `selfaware/*` branches when credentials allow it. Branch creation is conditional; local memory-only or question-only pulses do not need a branch.
 
 ## Quick Start for Codex
 
@@ -92,7 +99,7 @@ After installation, restart Codex or open a new session and confirm that `selfaw
 Suggested automation prompt:
 
 ```text
-Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Perform the built-in lightweight self-update check; decide whether updating selfaware-coding is an appropriate maintenance intention for this awakening, but do not update mechanically just because a newer version exists. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Perform the built-in lightweight self-update check; decide whether updating selfaware-coding is an appropriate maintenance intention for this awakening, but do not update mechanically just because a newer version exists. Orient yourself, read existing .selfaware/ memory if present, and understand this repository as the project's home, not its whole world. Choose one pulse mode: Observe, Reflect, Ask, Propose, Maintain, or Build. Produce one useful artifact: a no-change decision, question, memory update, product note, strategy note, backlog item, proposal, small maintenance diff, or small build diff. Do not assume code must change. Commit and push a selfaware/* branch only when tracked files changed and the diff is worth human review. Do not push to the default branch, merge, tag, or release.
 ```
 
 Suggested cadence: every 6 hours.
@@ -139,7 +146,7 @@ See [Risk Policy](references/risk-policy.md).
 
 ## Philosophy
 
-See [Philosophy](docs/philosophy.md) and [Glossary](docs/glossary.md). Chinese readers can use [哲学](docs/philosophy.zh.md) and [术语表](docs/glossary.zh.md).
+See [Philosophy](docs/philosophy.md), [Awareness Model](docs/awareness-model.md), and [Glossary](docs/glossary.md). Chinese readers can use [哲学](docs/philosophy.zh.md), [意识模型](docs/awareness-model.zh.md), and [术语表](docs/glossary.zh.md).
 
 ## License
 

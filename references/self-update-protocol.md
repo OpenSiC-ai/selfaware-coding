@@ -23,8 +23,8 @@ Use a global install-state file in the installed skill directory when possible. 
 {
   "install_source": "https://github.com/OpenSiC-ai/selfaware-coding",
   "channel": "stable",
-  "installed_version": "0.2.0",
-  "installed_revision": "v0.2.0",
+  "installed_version": "0.3.0",
+  "installed_revision": "v0.3.0",
   "manifest_path": "SELFUPDATE_MANIFEST.json",
   "last_update_check": "2026-05-26T10:00:00+08:00",
   "last_update_result": "up_to_date",
@@ -43,8 +43,8 @@ Each release must include `SELFUPDATE_MANIFEST.json` for core managed files:
 {
   "schema_version": 1,
   "package": "selfaware-coding",
-  "version": "0.2.0",
-  "revision": "v0.2.0",
+  "version": "0.3.0",
+  "revision": "v0.3.0",
   "core_files": [
     {
       "path": "SKILL.md",
@@ -56,6 +56,10 @@ Each release must include `SELFUPDATE_MANIFEST.json` for core managed files:
     },
     {
       "path": "references/agent-adapters.md",
+      "sha256": "..."
+    },
+    {
+      "path": "references/artifact-policy.md",
       "sha256": "..."
     },
     {
@@ -72,6 +76,10 @@ Each release must include `SELFUPDATE_MANIFEST.json` for core managed files:
     },
     {
       "path": "references/risk-policy.md",
+      "sha256": "..."
+    },
+    {
+      "path": "references/pulse-modes.md",
       "sha256": "..."
     },
     {
@@ -102,8 +110,8 @@ The lock is a metadata file, not an empty marker:
   "operation": "self-update",
   "started_at": "2026-05-26T10:00:00+08:00",
   "expires_at": "2026-05-26T10:30:00+08:00",
-  "installed_version": "0.2.0",
-  "installed_revision": "v0.2.0",
+  "installed_version": "0.3.0",
+  "installed_revision": "v0.3.0",
   "candidate_version": "0.2.1"
 }
 ```

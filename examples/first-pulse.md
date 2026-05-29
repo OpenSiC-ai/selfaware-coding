@@ -8,41 +8,52 @@
 
 ## Orientation
 
-The repository has a README, no existing `.selfaware/` memory, and a simple test command in `package.json`.
+The repository has a README, no existing `.selfaware/` memory, and no clear deployment, user, or roadmap signal.
 
 ## Intentions considered
 
-1. Add `.selfaware/` memory scaffolding. Low risk, useful for continuity.
-2. Fix a README command that does not match `package.json`. Low risk, useful.
-3. Add CI. Medium risk, better as backlog because the repo has no existing workflow style.
+1. Ask what workflow and user group matter most. Low risk, useful because the repo does not reveal product context.
+2. Add `.selfaware/` memory scaffolding. Low risk, useful for continuity.
+3. Fix a minor README wording issue. Low risk, but lower value than learning what the project is for.
+
+## Pulse mode
+
+Ask.
 
 ## Chosen intention
 
-Fix README command drift and create initial `.selfaware/` memory.
+Ask for the missing reality signal that would shape future maintenance.
+
+## Artifact produced
+
+One decision-changing question:
+
+```text
+Who is the first real user of this project, and what workflow should future pulses protect or improve first?
+```
 
 ## Actions taken
 
-- Updated README command from `npm run test` to `npm test`.
 - Added `.selfaware/memory.md` with initial project understanding.
-- Added `.selfaware/backlog.md` with a CI setup idea.
+- Added `.selfaware/questions.md` with the open user/workflow question.
+- Added a pulse log under `.selfaware/pulses/`.
 
 ## Self-review
 
-The diff is small, repo-local, and reversible. No user work was overwritten.
+No tracked files changed. The question is specific and would change future decisions.
 
 ## Checks
 
-- `npm test`: passed.
+- No code or tracked docs changed; no project checks required.
 
 ## Branch and commit
 
-- Branch: `selfaware/20260526-1400-fix-readme-command`
-- Commit: `selfaware-coding pulse: fix README command drift`
+- None. Local `.selfaware/` memory-only pulse.
 
 ## Memory updates
 
-The next pulse should inspect whether CI exists and whether README examples stay aligned with package scripts.
+The next pulse should use the user's answer to decide whether to protect onboarding, runtime reliability, installation, cost, or feature direction.
 
 ## Next continuation
 
-Evaluate whether the project should add a minimal CI workflow.
+When the user answers, convert it into `.selfaware/product-notes.md` and choose a Maintain, Propose, or Build intention from that context.

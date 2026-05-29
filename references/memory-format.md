@@ -11,6 +11,9 @@ Default policy: do not commit `.selfaware/` unless the target repository explici
   config.md
   memory.md
   backlog.md
+  questions.md
+  product-notes.md
+  strategy.md
   pulses/
     YYYY-MM-DD-HHMM.md
 ```
@@ -48,6 +51,10 @@ Suggested sections:
 
 ## Stable preferences
 
+## Reality signals
+
+## Open questions
+
 ## Risk notes
 
 ## Repeated observations
@@ -73,6 +80,72 @@ Use backlog when:
 - the idea is too broad for this pulse,
 - action is blocked by risk or dirty state,
 - user attention is needed.
+
+## questions.md
+
+Purpose: decision-changing questions for the human.
+
+Use when the pulse lacks reality signals that would change the right next move.
+
+Suggested format:
+
+```md
+# selfaware questions
+
+## Open
+
+- [ ] YYYY-MM-DD: <specific question>. Why it matters: <decision this unlocks>.
+
+## Answered
+
+- [x] YYYY-MM-DD: <question>. Answer: <concise answer>. Impact: <what changed>.
+```
+
+Questions should be few and specific. Do not use this file as a generic survey.
+
+## product-notes.md
+
+Purpose: observations about the project as software in the world.
+
+Useful sections:
+
+```md
+# product notes
+
+## Users and workflows
+
+## Deployment and operations
+
+## Adoption signals
+
+## Costs and constraints
+
+## Product hypotheses
+```
+
+Store hypotheses as hypotheses. Do not present guesses as facts.
+
+## strategy.md
+
+Purpose: durable direction, tradeoffs, and proposed next moves.
+
+Useful sections:
+
+```md
+# strategy
+
+## Current thesis
+
+## Near-term bets
+
+## Rejected paths
+
+## Experiments
+
+## Decisions needed
+```
+
+Keep this concise. Link back to tracked docs when a strategy becomes public project direction.
 
 ## Pulse Log
 
@@ -104,7 +177,11 @@ Template:
 2.
 3.
 
+## Pulse mode
+
 ## Chosen intention
+
+## Artifact produced
 
 ## Actions taken
 

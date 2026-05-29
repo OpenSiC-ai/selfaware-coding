@@ -14,9 +14,11 @@ Required host capabilities:
 - run from a recurring trigger: cron, automation, heartbeat, scheduler, or equivalent,
 - persist `.selfaware/` runtime memory in the target repository.
 
-Minimum git permission: push branches under `selfaware/*`.
+Minimum git permission for tracked-file publication: push branches under `selfaware/*`.
 
 Do not require default-branch push, merge, tag, release, package publish, or broad host-machine access.
+
+Do not require every pulse to publish a branch. The host should allow valid no-diff outcomes: observe, reflect, ask, propose, and local memory updates.
 
 ## Adapter Matrix
 

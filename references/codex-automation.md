@@ -41,7 +41,7 @@ Reasoning effort: use the host default unless the user asks otherwise.
 ## Baseline Prompt
 
 ```text
-Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Perform the built-in lightweight self-update check. Orient yourself, read existing .selfaware/ memory if present, choose one useful repository-local intention, act autonomously when safe, self-review, run relevant checks, commit and push a selfaware/* branch if checks pass, and write .selfaware/ memory. Do not push to the default branch, merge, tag, or release.
+Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Perform the built-in lightweight self-update check. Orient yourself, read existing .selfaware/ memory if present, and understand this repository as the project's home, not its whole world. Choose one pulse mode: Observe, Reflect, Ask, Propose, Maintain, or Build. Produce one useful artifact: a no-change decision, question, memory update, product note, strategy note, backlog item, proposal, small maintenance diff, or small build diff. Do not assume code must change. Commit and push a selfaware/* branch only when tracked files changed and the diff is worth human review. Do not push to the default branch, merge, tag, or release.
 ```
 
 ## Language
@@ -83,6 +83,8 @@ Not required:
 - release,
 - package publish.
 
+Branch permission does not mean every pulse should publish a branch. Local memory-only, question-only, observe, and reflect pulses should not create branches unless the target repository explicitly versions those artifacts.
+
 ## Verify
 
 Installation is usable when:
@@ -98,8 +100,9 @@ Installation is usable when:
 
 Expected pulse outputs:
 
+- pulse mode,
 - chosen intention,
-- actions taken or reason for no action,
+- artifact produced or reason for restraint,
 - checks and results,
 - branch/commit if pushed,
 - `.selfaware/` memory updates,
