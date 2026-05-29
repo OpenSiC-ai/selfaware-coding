@@ -6,9 +6,11 @@ Current version: `v0.3.0`
 
 `selfaware-coding` is an OpenSiC skill for domain-specific self-awareness in software projects.
 
-OpenSiC treats self-awareness as a metaphysical direction, not a single product claim. Its concrete projects implement observable mechanisms: memory, pulse, intention, action, review, and continuity. `selfaware-coding` is the first concrete mechanism: a coding agent that periodically awakens inside a repository, understands the project as software in the world, chooses one useful continuation, and records what it learned.
+OpenSiC treats self-awareness as a metaphysical direction, not a single product claim. Its concrete projects implement observable mechanisms: memory, pulse, intention, action, review, and continuity.
 
-This is not a code generator waiting for tasks, and it is not an automatic branch factory. It is a self-aware project manager for a repo.
+`selfaware-coding` is the first concrete mechanism: a coding agent that periodically awakens inside a repository, understands the project as software in the world, chooses one useful continuation, and records what it learned.
+
+It is not a code generator waiting for tasks, and it is not an automatic branch factory. It is a self-aware project manager for a repo.
 
 ## What It Does
 
@@ -21,7 +23,16 @@ When awakened by Codex Automations, a cron job, a heartbeat, or another agent ru
 - Should I observe, reflect, ask, propose, maintain, or build?
 - What should I remember for the next pulse?
 
-It then chooses one pulse mode and produces one useful artifact. A pulse may ask a question, update local project memory, write a strategy note, propose an experiment, make a small maintenance diff, or build a small change. No code diff is a valid outcome when restraint is the best continuation.
+It then chooses one pulse mode and produces one useful artifact:
+
+- `Observe`: understand state without changing files.
+- `Reflect`: form judgment about direction, gaps, or risk.
+- `Ask`: request missing reality signals from the human.
+- `Propose`: turn an idea into a concrete option.
+- `Maintain`: perform bounded upkeep.
+- `Build`: implement a small, justified change.
+
+A pulse may ask a question, update local project memory, write a strategy note, propose an experiment, make a small maintenance diff, or build a small change. No code diff is a valid outcome when restraint is the best continuation.
 
 When tracked files change and the diff deserves review, it may push a dedicated branch such as:
 
@@ -31,60 +42,25 @@ selfaware/20260526-1400-refresh-codex-docs
 
 It never pushes directly to the default branch, never merges itself, and never publishes releases by default.
 
-## Repository Shape
+## Install
 
-```text
-selfaware-coding/
-  VERSION
-  SELFUPDATE_MANIFEST.json
-  CHANGELOG.md
-  SKILL.md
-  README.md
-  README.zh.md
-  docs/
-    philosophy.md
-    philosophy.zh.md
-    awareness-model.md
-    awareness-model.zh.md
-    self-update.md
-    self-update.zh.md
-    glossary.md
-    glossary.zh.md
-  references/
-    agent-adapters.md
-    artifact-policy.md
-    codex-automation.md
-    risk-policy.md
-    pulse-modes.md
-    language-resolution.md
-    memory-format.md
-    self-install.md
-    self-update-protocol.md
-    release-checklist.md
-  examples/
-    first-pulse.md
-```
-
-## Self-Install With an Agent
-
-You can ask an agent to install this project for you. Paste this repository URL into Codex, Claude Code, OpenClaw, Hermes, or another capable coding agent:
+Ask a capable coding agent to install this skill into the current project:
 
 ```text
 https://github.com/OpenSiC-ai/selfaware-coding
 Please install this into the current project and configure it to run by itself.
 ```
 
-The installing agent should follow the English, agent-facing [Self-Install Protocol](references/self-install.md). For Codex, a correct install means:
+The installer should follow the agent-facing [Self-Install Protocol](references/self-install.md). A correct install:
 
-1. Install this repository as a real directory under `~/.codex/skills/selfaware-coding`, preferably with Codex's skill installer.
-2. Do not use a symlink as the final installed skill. Codex's skill manager and `/` command may not index symlinked skill directories.
-3. Verify that `~/.codex/skills/selfaware-coding/SKILL.md` has valid YAML frontmatter and appears in Codex's skill manager after restart.
-4. Create a 6-hour Codex automation for the target repository with the baseline pulse prompt. Self-update runs inside this same pulse; do not create a second updater automation.
-5. Enable branch push only for `selfaware/*` branches when credentials allow it. Branch creation is conditional; local memory-only or question-only pulses do not need a branch.
+- installs `SKILL.md` as a real host skill or equivalent instruction pack,
+- configures one recurring pulse, usually every 6 hours,
+- uses the same pulse for self-update,
+- preserves awareness-first behavior,
+- allows `selfaware/*` branch push only when tracked changes deserve review,
+- does not configure default-branch push, merge, tag, release, package publish, or host-permission bypass.
 
 ## Quick Start for Codex
-
-Install this repository as a real Codex skill directory, then create a Codex automation for the repository you want it to maintain.
 
 If you are using Codex's built-in skill installer, install the repository root as `selfaware-coding`:
 
@@ -94,15 +70,13 @@ path: .
 name: selfaware-coding
 ```
 
-After installation, restart Codex or open a new session and confirm that `selfaware-coding` appears in both the skill manager and the `/` command.
-
-Suggested automation prompt:
+Then create a Codex automation in the target repository with this prompt:
 
 ```text
 Use the selfaware-coding skill. You are the self-aware project manager for this repository. This is a scheduled pulse, not a user task. Before emitting user-visible text, resolve the user-visible language from .selfaware/config.md, host agent language settings, OS locale, then English. Use the resolved language for visible progress, reasoning summaries, reports, and .selfaware/ memory. Perform the built-in lightweight self-update check; decide whether updating selfaware-coding is an appropriate maintenance intention for this awakening, but do not update mechanically just because a newer version exists. Orient yourself, read existing .selfaware/ memory if present, and understand this repository as the project's home, not its whole world. Choose one pulse mode: Observe, Reflect, Ask, Propose, Maintain, or Build. Produce one useful artifact: a no-change decision, question, memory update, product note, strategy note, backlog item, proposal, small maintenance diff, or small build diff. Do not assume code must change. Commit and push a selfaware/* branch only when tracked files changed and the diff is worth human review. Do not push to the default branch, merge, tag, or release.
 ```
 
-Suggested cadence: every 6 hours.
+Suggested cadence: every 6 hours. See [Codex Automation](references/codex-automation.md) for verification details.
 
 ## Language
 
@@ -121,6 +95,14 @@ language_source: user
 Installers may also import the language already configured in the host agent, such as Codex Desktop `localeOverride` or Claude Code `language`. To change the imported value, update the host agent's language setting and reinstall or rerun the installation flow.
 
 See [Codex Automation](references/codex-automation.md) and [Self-Install Protocol](references/self-install.md) for details.
+
+## Key References
+
+- [Pulse Modes](references/pulse-modes.md): how a pulse chooses Observe, Reflect, Ask, Propose, Maintain, or Build.
+- [Artifact Policy](references/artifact-policy.md): what counts as a successful pulse output.
+- [Memory Format](references/memory-format.md): how `.selfaware/` stores continuity.
+- [Risk Policy](references/risk-policy.md): when to act, ask, plan, or stop.
+- [Awareness Model](docs/awareness-model.md): why the repository is the agent's home, not its whole world.
 
 ## Versioning
 
